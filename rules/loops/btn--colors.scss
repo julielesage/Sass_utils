@@ -1,0 +1,13 @@
+$colours: (
+  mint: #15DEA5,
+  navy: #001534,
+  seafoam: #D6FFF5,
+  white: #fff,
+  rust: #DB464B
+);
+
+@each $colour, $hex in $colours {
+  .btn--#{$colour} {
+      background-color: $hex;
+  }
+}

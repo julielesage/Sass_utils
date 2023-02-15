@@ -1,0 +1,16 @@
+// 1 var for several values list
+$syntax-01: 1rem 2rem 3rem 4rem;
+$syntax-02: 1rem, 2rem, 3rem, 4rem;
+$syntax-03: (1rem 2rem 3rem 4rem);
+$syntax-04: (1rem, 2rem, 3rem, 4rem);
+
+$font-size: 7rem 5rem 4rem 2rem;
+.form{
+ &__field {
+   & label {
+    font-size: nth($font-size, 4); // = 2rem !!!Sass commence ses listes à 1 pas 0!!!!
+   }
+ }
+}
+
+// => listes illisibles, les map c'est mieux avec un format clé/valeur

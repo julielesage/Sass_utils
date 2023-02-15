@@ -1,0 +1,20 @@
+// mixin with default arg
+$colour-primary: red;
+$heading-shadow-size: 0.55rem;
+
+@mixin heading-shadow($colour: $colour-primary, $shadow-size: $heading-shadow-size){
+ text-shadow: $shadow-size solid $colour;
+}
+
+.heading{
+   &__header {
+     @include heading-shadow($colour-white);
+   }
+}
+
+.form{
+   &__heading {
+     @include heading-shadow; // = red
+   }
+  }
+  

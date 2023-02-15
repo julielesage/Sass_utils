@@ -1,0 +1,23 @@
+// extension here is better than mixin because mixin will duplicate code
+// Mixin duplique un ensemble de règles alors que @extend duplique le sélecteur.
+
+// mais mixin prend des arguments => better pour un code scalable et extensions difficile à maintenir
+
+%typography { // = placeholder = class silencieuse non utilisée dans html
+   color: $colour-primary;
+   font-size: 2rem;
+   font-weight: 100;
+   line-height: 1.7;
+}
+
+h1 {
+  @extend %typography;
+}
+
+// ex css compiled result:
+.typography, h1 {
+  color: $colour-primary;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.7;
+}

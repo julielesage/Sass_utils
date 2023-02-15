@@ -1,0 +1,44 @@
+// CSS media queries
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// SCSS breakpoints
+$breakpoints: (
+  mobile: 599px
+)
+
+@mixin mobile-only {
+  @media screen and (max-width: map-get($breakpoints, mobile)) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin mobile-only {
+  @media screen and (max-width: map-get($breakpoints, mobile)){
+    grid-template-columns: 1fr;
+  }
+}
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @include mobile-only;
+}
+
+// map-get avec @content
+@mixin mobile-only {
+  @media screen and (max-width: map-get($breakpoints, mobile)){
+    @content; // placeholder
+  }
+}
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @include mobile-only{
+    grid-template-columns: 1fr;
+  }
+}

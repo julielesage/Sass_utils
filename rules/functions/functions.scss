@@ -1,0 +1,41 @@
+// DARKEN COLOUR
+$colour-primary: #15dea5;
+// = (21,222,165)en RGB
+// = hsl(163, 83%, 48%) [hue=color, sat=uration, light] (hsla avec alpha en plus)
+// darken(colour, %) convertit la couleur en hsl pour jouer sur light 
+@mixin heading-shadow($colour:$colour-primary, $size: $heading-shadow-size){
+  text-shadow: $size $size darken($colour, 10%);
+}
+
+scale(colour, amount)
+
+lighten(colour, %)
+
+// function must return a value
+@function lightness-shift($colour) {
+  @if (lightness($colour) < 25% ) {
+    @return lighten($colour, 10%);
+  } @else {
+    @return darken($colour, 10%);
+  }
+}
+
+// inégrée dans une mixin:
+@mixin heading-shadow($colour: lightness-shift($colour-primary), $size: $heading-shadow-size){
+  color: $colour;
+  text-shadow: $size $size $colour;
+}
+
+@function pastel($clr) {
+  $hue: hue($clr); // valeur de teinte
+  $sat: 100; // caractéristique du pastel
+  $light: 90%; // caractéristique du pastel
+  @return hsl($hue, $sat, $light);
+}
+
+.btn {
+  cursor: pointer;
+  background: $color-primary;
+  &:hover {
+    background: pastel($color-primary);
+  }

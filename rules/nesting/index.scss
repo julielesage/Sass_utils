@@ -1,0 +1,42 @@
+.nav {
+  padding-right: 6rem;
+  flex: 2 1 auto;
+  text-align: right;
+  nav__link {
+      display: inline;
+      font-size: 3rem;
+      padding-left: 1.5rem;
+      nav__link--active {
+        color: #001534;
+      }
+  }
+}
+
+// COMBINE
+.parent {
+  .descendant { // can be child, grand-child, ...
+    color: #fff;
+  }
+
+  > .child { // direct child
+    color: #fff;
+  }
+  
+  + .adjacent { // 2 classes together
+    color: #fff;
+  }
+
+  &:hover { //esperluette pour coller à "parent"
+    color: black;
+  }
+
+  &__title { // BEM principle
+    font-size: 2.4rem;
+    &--modifier {
+      color: blue;
+    }
+  }
+
+}
+
+

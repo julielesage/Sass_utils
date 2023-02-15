@@ -1,0 +1,100 @@
+$font-size: (
+  logo:7rem,
+  heading:5rem,
+  project-heading:4rem, 
+  label:2rem
+);
+
+.form{
+ &__field {
+  & label {
+    font-size: map-get($font-size, label); // 2rem
+   }
+ }
+}
+
+// inception map
+$colour-primary: #15DEA5;
+$colour-secondary: #001534;
+$colour-accent: #D6FFF5;
+$colour-white: #fff;
+$colour-invalid: #DB464B;
+
+$txt-input-palette: (
+ active: (
+   bg: $colour-primary,
+   border: $colour-primary,
+   txt: $colour-white,
+ ),
+ focus: (
+   bg: $colour-primary,
+   border: $colour-primary,
+   txt: $colour-white,
+ ),
+ invalid: (
+   bg: $colour-invalid,
+   border: $colour-white,
+   txt: $colour-white,
+ )
+);
+
+@mixin txt-input-palette($state) { // state as active, focus or invalid
+  $palette: map-get($txt-input-palette, $state);
+  border: .1rem solid map-get($palette, border);
+  background-color: map-get($palette, bg);
+  color: map-get($palette, txt);
+}
+
+.form {
+  &__field {
+    & input {
+      @include txt-input-palette(focus);
+    }
+  }
+}
+
+// LOOP AUTOMATIC
+@mixin txt-input-palette($palettes) { // $palettes = doc
+  @each $state, $palette in $palettes{ // $state = key, $palette = value
+    &:#{$state} { //interpolation de variable = &:focus
+      border: .1rem solid map-get($palette, border);
+      background-color: map-get($palette, bg);
+      color: map-get($palette, txt);
+    }
+  }
+}
+
+.form {
+  &__field {
+    & input {
+      @include txt-input-palette($txt-input-palette);
+    }
+  }
+}
+
+$btn-mods: (
+  pink: $color-secondary,
+  blue: $color-tertiary
+);
+
+@mixin btn-mods($map) {
+  @each $mod, $val in $btn-mods {
+    &--#{$mod} {
+      background: $val
+    }
+  }
+}
+
+
+.btn {
+  cursor: pointer;
+  padding: 1.5rem 3rem;
+  border-radius: 10rem;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  color: $color-accent;
+  background: $color-primary;
+  @include btn-mods($btn-mods)
+}

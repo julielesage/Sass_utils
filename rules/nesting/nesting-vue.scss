@@ -1,0 +1,10 @@
+.component-name {
+  &__title {
+    font-size: large;
+
+    // goes deeper in component child as expernal atomic library that is not in the scoped
+    &::v-deep .title-icon {
+      width: 1rem;
+    }
+  }
+}

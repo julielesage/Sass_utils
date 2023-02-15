@@ -1,0 +1,22 @@
+// <div class="btn">Solid Button</div>
+// <div class="btn btn--outline">Outline Button</div>
+// <div class="btn btn--disabled">Solid Button</div>
+// <div class="btn btn--outline btn--disabled">Outline Button</div>
+
+.btn {
+  display: inline-block;
+  margin: 0 auto;
+  background: #15DEA5;
+  padding: 1rem;
+  &--disabled {
+    background: grey;
+  }
+  
+  &--outline {
+     background: transparent;
+     border: 2px solid #15DEA5;
+     &.btn--disabled {
+      border: 2px solid grey;
+      }
+  }
+}

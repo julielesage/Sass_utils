@@ -1,0 +1,14 @@
+@mixin heading-shadow($colour: $colour-primary, $size: $heading-shadow-size) {
+  @if ( lightness($colour) < 25% ) {
+    $colour: lighten($colour, 10%);
+  } @else {
+    $colour: darken($colour, 10%);
+  }
+  text-shadow: $size $size $colour;
+}
+
+// ex
+@include heading-shadow($colour-secondary)
+
+@if ( lightness($colour) < 25% ) and ( saturation($colour) > 10% ) {...}
+@if ( lightness($colour) < 25% ) or ( saturation($colour) > 10% ) {...}
