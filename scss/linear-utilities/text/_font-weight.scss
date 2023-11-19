@@ -1,0 +1,36 @@
+/* ------------------------------------------------------------------
+  § font-weight
+------------------------------------------------------------------ */
+
+.text_weight_default,
+.text_default-placeholder::placeholder
+{
+  @include font_main;
+}
+
+.bold,
+.text_bold,
+b
+{
+  @include font_main_bold;
+}
+
+.light,
+.text_light
+{
+  @include font_main_light;
+}
+
+.semibold
+{
+  @include font_main_semibold;
+}
+
+@include mq(tab) {
+  .tab_bold {
+    @include font_main_bold;
+  }
+  .tab_weight_default {
+    @include font_main;
+  }
+}

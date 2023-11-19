@@ -1,0 +1,129 @@
+/* ------------------------------------------------------------------
+  Transforms
+------------------------------------------------------------------ */
+
+.translate-t_-50p
+{
+  transform : translateY(-50%);
+}
+
+.translate-l_-50p
+{
+  transform : translateX(-50%);
+}
+
+.translate_-50p
+{
+  transform : translate(-50%, -50%);
+}
+
+.rotate_cw
+{
+  transform: rotate(90deg);
+}
+
+.rotate_ccw
+{
+  transform: rotate(-90deg);
+}
+
+.rotate_spinner
+{
+  animation-name            : spin;
+  animation-duration        : 1000ms;
+  animation-timing-function : linear;
+  animation-iteration-count : infinite;
+}
+
+@keyframes spin
+{
+  from
+  {
+    transform : rotate(0deg);
+  }
+  to
+  {
+    transform : rotate(360deg);
+  }
+}
+
+.background-animation_wave
+{
+  background      : linear-gradient(105deg, $white, $smoke_white, $smoke_white);
+  background-size : 300% 300%;
+  transition      : 0.25s;
+  animation       : animation_wave 2s cubic-bezier(0, 0, 1, 1) infinite;
+}
+
+@keyframes animation_wave
+{
+  20%
+  {
+    background-position : 0 50%;
+  }
+  50%
+  {
+    background-position : 100% 50%;
+  }
+  100%
+  {
+    background-position : 0 50%;
+  }
+}
+
+.background-animation_impulse {
+  background            : linear-gradient(95deg, $rgba_black_0, $rgba_black_0, $grey, $rgba_black_0, $rgba_black_0);
+  background-size       : 500% 100%;
+  background-position   : 100% 50%;
+  transition            : 0.25s;
+  animation             : animation_impulse 2s cubic-bezier(.56,.04,.23,.94) infinite;
+}
+
+@keyframes animation_impulse {
+  0% {
+    background-position : 100% 50%;
+  }
+  100% {
+    background-position : 0% 50%;
+  }
+}
+
+@keyframes animation_hide
+{
+  0%
+  {
+    filter : blur(0);
+  }
+  50%
+  {
+    opacity : 1;
+  }
+  100%
+  {
+    filter  : blur(10px);
+    opacity : 0;
+    height  : 0;
+  }
+}
+
+
+.hidden-after-5s
+{
+  animation: animation_hide 0.5s ease 5s forwards;
+  animation-fill-mode: forwards;
+}
+
+.products-placeholder.hide-with-animation
+{
+  animation : animation_hide 0.5s ease forwards;
+}
+
+
+.fade-out {
+  background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), rgba(248, 248, 248, 0.57) 34%, $white);
+}
+
+.tr_translate3d-0
+{
+  transform : translate3d(0, 0, 0);
+}

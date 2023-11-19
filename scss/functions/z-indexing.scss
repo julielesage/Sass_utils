@@ -1,0 +1,28 @@
+/* ------------------------------------------------------------------
+  § Z-indexing
+    Set z-index values against the reference map variable <$z-index-list>
+------------------------------------------------------------------ */
+
+@function z-indexing( $z-index ) {
+
+  // Guards
+  @if not is-of-type($z-index, number) {
+
+      @error "<$z-index>, with a value of #{$z-index}, #{$message_is-not-a-number}.";
+  }
+
+  @if not unitless( $z-index ) {
+
+      @error "<$z-index>, with a value of "#{$z-index}", #{$message_is-not-unitless}.";
+  }
+
+  @if not map_has_key( $z-index-list, $z-index ) {
+
+      @error "<$z-index>, with a value of "#{$z-index}", must be present in the <$z-index-list>";
+  }
+
+  // Logic
+  $z-i_result: $z-index;
+
+  @return $z-i_result;
+}

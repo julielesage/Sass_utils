@@ -1,0 +1,37 @@
+/* ------------------------------------------------------------------
+  Visibility
+------------------------------------------------------------------ */
+
+.visible
+{
+  visibility : visible;
+}
+
+.invisible
+{
+  visibility : hidden;
+}
+
+.hide
+{
+  display : none !important;
+}
+
+.show
+{
+  display : flex !important;
+}
+
+@include mq(tab)
+{
+
+  .tab_hide
+  {
+    display : none !important;
+  }
+
+  .tab_show
+  {
+    display : flex !important;
+  }
+}

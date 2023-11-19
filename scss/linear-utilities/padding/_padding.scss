@@ -1,0 +1,209 @@
+/* ------------------------------------------------------------------
+  § Padding
+------------------------------------------------------------------ */
+
+
+.padding-x_40 {
+  padding-left  : to-rem(40);
+  padding-right : to-rem(40);
+}
+
+.padding-left_7 {
+  padding-left : to-rem(7);
+}
+
+.padding-left_25 {
+  padding-left : to-rem(25);
+}
+
+.padding-right_25 {
+  padding-right : to-rem(25);
+}
+
+.padding-left_40 {
+  padding-left : to-rem(40);
+}
+
+div .padding-right_80 {
+  padding-right : to-rem(80);
+}
+
+div .padding-right_240 {
+  padding-right : to-rem(240);
+}
+
+.padding_3 {
+  padding : to-rem(3);
+}
+
+.p_10 {
+  padding : to-rem(10);
+}
+
+.p_15 {
+  padding : to-rem(15);
+}
+
+.p-b_2 {
+  padding-bottom : to-rem(2);
+}
+
+.p_20 {
+  padding : to-rem(20);
+}
+
+.p_28 {
+  padding : to-rem(28);
+}
+
+.p_35 {
+  padding : to-rem(35);
+}
+
+.p-b_3 {
+  padding-bottom : to-rem(3);
+}
+
+.p-b_37 {
+  padding-bottom : 37px;
+}
+
+.p-b_50 {
+  padding-bottom : to-rem(50);
+}
+
+.p-b_60 {
+  padding-bottom : to-rem(60);
+}
+
+.p-b_150i {
+  padding-bottom : to-rem(150) !important;
+}
+
+.p-r_60 {
+  padding-right : to-rem(60);
+}
+
+div .p-b_17 {
+  padding-bottom : to-rem(17);
+}
+
+div .p-t_10 {
+  padding-top : to-rem(10);
+}
+
+div .p-t_7 {
+  padding-top : to-rem(7);
+}
+
+div .p-t_12 {
+  padding-top : to-rem(12);
+}
+
+div .p-t_55 {
+  padding-top : to-rem(55);
+}
+
+.p-b_130 {
+  padding-bottom : to-rem(130);
+}
+
+.p-l_50 {
+  padding-left : to-rem(50);
+}
+
+.p-l_85 {
+  padding-left : to-rem(85);
+}
+
+.p-l_XL {
+  padding-left : to-rem(25);
+}
+
+.p-r_XL {
+  padding-right : to-rem(25);
+}
+
+.p-y_XL {
+  padding-top    : to-rem(25);
+  padding-bottom : to-rem(25);
+}
+
+div .p-x_15 {
+  padding-left  : to-rem(15);
+  padding-right : to-rem(15);
+}
+
+.p_16 {
+  padding : to-rem(16);
+}
+
+@include mq(sml) {
+  .sml_p-x_0 {
+    padding-left  : 0;
+    padding-right : 0;
+  }
+}
+
+.p-t_9 {
+  padding-top : to-rem(9);
+}
+
+.p-t_27 {
+  padding-top : 27px;
+}
+
+.p-t_47 {
+  padding-top : 47px;
+}
+
+@include mq(mob) {
+  .mob_p-l_0 {
+    padding-left : 0;
+  }
+}
+
+@include mq(mob) {
+  .mob_p-b-modal {
+    @supports (-webkit-touch-callout: none) {
+      padding-bottom : 20vh;
+    }
+    padding-bottom : 8vh;
+  }
+}
+
+@include mq(tab) {
+  .tab_max-width_300 {
+    max-width : to-rem(300);
+  }
+}
+
+
+
+.p-y_24 {
+  padding-top    : to-rem(24);
+  padding-bottom : to-rem(24);
+}
+.p-y_20 {
+  padding-top    : to-rem(20);
+  padding-bottom : to-rem(20);
+}
+.p-y_15 {
+  padding-top    : to-rem(15);
+  padding-bottom : to-rem(15);
+}
+
+.p-y_13 {
+  padding-top    : to-rem(13);
+  padding-bottom : to-rem(13);
+}
+
+.p-y_7 {
+  padding-top    : to-rem(7);
+  padding-bottom : to-rem(7);
+}
+
+.p-r_12
+{
+  padding-right: to-rem(12);
+}

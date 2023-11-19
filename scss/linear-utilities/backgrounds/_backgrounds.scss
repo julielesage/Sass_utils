@@ -1,0 +1,180 @@
+/* ------------------------------------------------------------------
+  Background
+  ---
+  § Background-repeat
+  § Background-size
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Background-repeat
+------------------------------------------------------------------ */
+
+.no-repeat {
+  background-repeat: no-repeat;
+}
+
+.no-repeat-x {
+  background-repeat: no-repeat repeat;
+}
+
+.no-repeat-y {
+  background-repeat: repeat no-repeat;
+}
+
+.repeat {
+  background-repeat: repeat;
+}
+
+.repeat-x {
+  background-repeat: repeat-x;
+}
+
+.repeat-y {
+  background-repeat: repeat-y;
+}
+
+/* ------------------------------------------------------------------
+  § Background-size
+------------------------------------------------------------------ */
+
+.contain {
+  background-size: contain;
+}
+
+.cover {
+  background-size: cover;
+}
+
+.background-size_auto {
+  background-size: auto;
+}
+
+.background-size_15 {
+  background-size: 15px;
+}
+
+.background-size_20 {
+  background-size: 20px;
+}
+
+.background-size_23 {
+  background-size: to-rem(23);
+}
+
+.background-size_25 {
+  background-size: 25px;
+}
+
+.background-size_28 {
+  background-size: 28px;
+}
+
+.background-position-y_center {
+  background-position-y: center;
+}
+
+.background-position-x_center {
+  background-position-x: center;
+}
+
+.background-position_center {
+  background-position: 50% center;
+}
+
+.background-position_right {
+  background-position: right;
+}
+
+.background-position_left {
+  background-position: left;
+}
+
+.background-position_top-right {
+  background-position: top right;
+}
+
+.background-position_bottom-right {
+  background-position: bottom right;
+}
+
+.background-position_top-left {
+  background-position: top left;
+}
+
+.background-position_bottom-left {
+  background-position: bottom left;
+}
+
+.background-p_S {
+  background-size: calc(100% - 2 * 0.3125rem);
+  background-position: center;
+}
+
+.background-p_default {
+  background-size: calc(100% - 2 * 0.625rem);
+  background-position: center;
+}
+
+.background-position-x_5 {
+  background-position-x: 5px;
+}
+
+.background-position-x_15 {
+  background-position-x: to-rem(15);
+}
+
+.background-position-x_25 {
+  background-position-x: 25px;
+}
+
+/* ------------------------------------------------------------------
+  § Background
+------------------------------------------------------------------ */
+
+.background_none {
+  background: none;
+}
+
+/* ------------------------------------------------------------------
+  § Background patterns
+------------------------------------------------------------------ */
+
+.background_pattern-type1 {
+  background-image: url('#{$path-to-img}background-patterns/pattern1.png');
+}
+
+.background_pattern-type2 {
+  background-image: url('#{$path-to-img}background-patterns/pattern2.png');
+}
+
+.background_pattern-type3 {
+  background-image: url('#{$path-to-img}background-patterns/pattern3.png');
+}
+
+/* ------------------------------------------------------------------
+  § Background-color
+------------------------------------------------------------------ */
+
+.background-color_black-30p {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.background-color_white {
+  background-color: rgba(255, 255, 255, 255);
+}
+/* ------------------------------------------------------------------
+  § Background-twicpics
+------------------------------------------------------------------ */
+
+.background-twicpics {
+  background-size: cover;
+}
+
+/* ------------------------------------------------------------------
+  § BLEND-MODE
+------------------------------------------------------------------ */
+
+.blend-mode-multiply {
+  mix-blend-mode: multiply;
+}
+

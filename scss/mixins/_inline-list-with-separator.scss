@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------------
+  Inline-list-with-separator
+  ---
+  Like breadcrumbs, generates a list with a separator sign
+  Separator, default height and spacing between list elements are customizable
+------------------------------------------------------------------ */
+
+@mixin inline-list-with-separator(
+  $separator-string:  '>',
+  $spacing:           S,
+  $min-height:        S
+) {
+
+  // Guards
+
+  @if not is-of-type( $separator-string, map-get( $sass-types-list, string ) ) {
+
+    @error
+      "In mixin <inline-list-with-separator>,
+      variable <$separator-string>, with a value of "#{$spacing}", "#{$message_is-not-a-string};
+  }
+  
+  @if not map_has_key( $spacings-list, $spacing ) {
+
+    @error
+      "In mixin <inline-list-with-separator>,
+      variable <$spacing>, with a value of "#{$spacing}", was not found in map <$spacings-list>";
+  }
+
+  @if not map_has_key( $sizings-list, $min-height ) {
+
+    @error
+      "In mixin <inline-list-with-separator>,
+      variable <$min-height>, with a value of "#{$min-height}", was not found in map <$spacings-list>";
+  }
+
+  // Logic
+
+  display: inline-flex;
+  align-items: center;
+  min-height: sizing( $min-height );
+
+
+  & + & {
+    margin-left: spacing( $spacing );
+  }
+
+  & + &:before {
+    content: $separator-string;
+    margin-right: spacing( $spacing );
+  }
+}

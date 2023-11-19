@@ -1,0 +1,44 @@
+/* ------------------------------------------------------------------
+  § text-transformation
+------------------------------------------------------------------ */
+
+.text_capitalize
+{
+  text-transform : capitalize;
+}
+
+.capitalize-first-word::first-letter
+{
+  text-transform : uppercase;
+}
+
+.text_lowercase
+{
+  text-transform : lowercase;
+}
+
+.text_uppercase
+{
+  text-transform : uppercase;
+}
+
+.text_transform_default
+{
+  min-height: inherit;
+  min-width: inherit;
+  outline: inherit;
+  padding: inherit;
+  box-shadow: inherit;
+  border-radius: inherit;
+}
+
+.text_none,
+.text_transform_default,
+.text_transform_none
+{
+  text-transform : none;
+}
+
+.text_italic {
+  font-style: italic
+}

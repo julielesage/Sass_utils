@@ -1,0 +1,47 @@
+/* ------------------------------------------------------------------
+  § Line clamp
+
+  /// Origin  of the mixin https://ryanmack.me/css-truncation-mixin
+------------------------------------------------------------------ */
+
+/// line-clamp helper mixin
+/// @param {Number}     $linesNumber      [1]                               number of line to clamp by default
+/// @param {Number}     $fontSize         [$font-size_default - 0.35px]     font-size of the text
+/// @param {Number}     $lineHeight       [$line-height_default]            line-height by default value of the project
+/// @author SDS
+
+@mixin line-clamp(
+  $linesNumber : 1,
+  $fontSize: ($font-size_default),
+  $lineHeight: $line-height_default
+)
+{
+
+  //Guards
+  @if (not is-of-type($linesNumber, map-get($sass-types-list, number)))
+  {
+    $errorMessage : '<$linesNumber>, with a value of #{$linesNumber}, #{$message_is-not-a-number}.';
+    @error $errorMessage;
+  }
+
+  @if (not is-of-type($fontSize, map-get($sass-types-list, number)))
+  {
+    $errorMessage : '<$fontSize>, with a value of #{$fontSize}, #{$message_is-not-a-number}.';
+    @error $errorMessage;
+  }
+
+  @if (not is-of-type($lineHeight, map-get($sass-types-list, number)))
+  {
+    $errorMessage : '<$lineHeight>, with a value of #{$lineHeight}, #{$message_is-not-a-number}.';
+    @error $errorMessage;
+  }
+
+  // Logic
+  height         : ($fontSize + 0.35) * $lineHeight * $linesNumber * 1px; // 0.35 is a practical measure for cross-browser consistency, 1px is for setting the final value in pixels
+  display        : block;
+  padding-top    : 0 !important;
+  padding-bottom : 0 !important;
+  overflow       : hidden;
+  line-height    : inherit;
+  border         : 0;
+}

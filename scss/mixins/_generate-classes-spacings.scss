@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------------
+  Generate-classes-spacings
+------------------------------------------------------------------ */
+
+///
+/// @Author: SCO
+///
+///
+
+@mixin generate-classes-spacings (
+  $directions,    // Map:     all directions and compounds directions map
+  $spacings,      // Map:     all spacings and compounds spacings map
+  $class-alias,   // String:  Class prefix, ex.:
+  $property       // String:  CSS property
+) {
+
+  //Guards
+
+  // Logic
+  @each $direction-key, $direction-value in $directions {
+
+    $direction-alias: if($direction-value == map-get($directions, a), '', '#{$dash}#{$direction-key}');
+
+    @each $spacing-key, $spacing-value in $spacings {
+
+      $value-alias: '#{$underscore}#{$spacing-key}';
+
+      $classname: #{$dot}#{$class-alias}#{$direction-alias}#{$value-alias};
+
+      #{$dot}#{$class-alias}#{$direction-alias}#{$value-alias} {
+
+        @if (map-get($directions, a) == $direction-value) {
+
+          #{$property}: to-rem($spacing-value);
+
+        } @else if (map-get($directions, y) == $direction-value) {
+
+          #{$property}-top: to-rem($spacing-value);
+          #{$property}-bottom: to-rem($spacing-value);
+
+        } @else if (map-get($directions, x) == $direction-value) {
+
+          #{$property}-right: to-rem($spacing-value);
+          #{$property}-left: to-rem($spacing-value);
+        }
+        @else {
+          #{$property}#{$dash}#{$direction-value}: to-rem($spacing-value);
+        }
+      }
+    }
+  }
+}

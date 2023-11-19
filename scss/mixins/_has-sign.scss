@@ -1,0 +1,27 @@
+/* ------------------------------------------------------------------
+  Has-sign
+------------------------------------------------------------------ */
+
+@mixin has-sign(
+    $direction: map-get( $content-directions-list, after ),
+    $sign: ' *'
+) {
+
+    // Guards
+    @if (not map-has_key( $content-directions-list, $direction ) ) {
+        @error 'In mixin <has-sign>, variable <$direction>, was not found in map variable <$content-directions-list>.
+            Solution: verify <$direction> value is in map variable <$content-directions-list>';
+    }
+
+    @if ( str_length( $sign ) == 0 ) or ( $sign == '' ) {
+        @error 'In mixin <has-sign>, variable <$sign>, #{$message_is-an-empty-string}';
+    }
+    @if (not is-of-type( $sign, map-get( $sass-types-list, string ) )) {
+        @error 'In mixin <has-sign>, variable <$sign>, #{$message_is-not-a-string}';
+    }
+
+    // Logic
+    &:#{$direction} {
+        content: $sign;
+    }
+}

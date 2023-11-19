@@ -1,0 +1,14 @@
+/* ------------------------------------------------------------------
+  Has-icon
+------------------------------------------------------------------ */
+
+@mixin has-icon(
+  $background-repeat   : no-repeat,
+  $background-position : center,
+  $background-size     : 24px auto
+)
+{
+  background-repeat   : $background-repeat;
+  background-position : $background-position;
+  background-size     : $background-size;
+}

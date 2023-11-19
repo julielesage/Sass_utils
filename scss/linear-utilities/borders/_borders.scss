@@ -1,0 +1,144 @@
+/* ------------------------------------------------------------------
+  Borders
+  ---
+
+  § Has-border
+    Add borders
+
+  § Has-border_none
+    Suppress borders
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § has-border
+    Add borders
+------------------------------------------------------------------ */
+
+.has-border,
+.has-border_all
+{
+  @include has-border(all);
+}
+
+@include mq(tab)
+{
+
+  .tab_has-border
+  {
+    @include has-border(all);
+  }
+
+  .tab_has-border_x
+  {
+    @include has-border(x);
+  }
+}
+
+.has-border_y
+{
+  @include has-border(y);
+}
+
+.has-border_x
+{
+  @include has-border(x);
+}
+
+.has-border_t
+{
+  @include has-border(top);
+}
+
+.has-border_r
+{
+  @include has-border(right);
+}
+
+.has-border_b
+{
+  @include has-border(bottom);
+}
+
+.has-border_l
+{
+  @include has-border(left);
+}
+
+/* ------------------------------------------------------------------
+  § border-none
+    Suppress borders
+------------------------------------------------------------------ */
+
+.has-border_none
+{
+  @include has-border(all, $border-width : 0);
+}
+
+.has-border_none_y
+{
+  @include has-border(y, $border-width : 0);
+}
+
+.has-border_none_x
+{
+  @include has-border(x, $border-width : 0);
+}
+
+.has-border_none_t
+{
+  @include has-border(top, $border-width : 0);
+}
+
+.has-border_none_r
+{
+  @include has-border(right, $border-width : 0);
+}
+
+.has-border_none_b
+{
+  @include has-border(bottom, $border-width : 0);
+}
+
+.has-border_none_l
+{
+  @include has-border(left, $border-width : 0);
+}
+@include mq(tab)
+{
+  .tab_has-border_b
+  {
+    @include has-border(bottom);
+  }
+}
+
+.border_ko:hover {
+  border-color: $light_raspberry;
+}
+
+.border_ko:focus {
+  border-color: $light_raspberry;
+}
+.has-border_t_dashed
+{
+  @include has-border(top, $border-style : dashed);
+}
+
+.has-border_t_solid_grey-inactive
+{
+  position:relative;
+  &:after {
+    display: block;
+    height: to-rem(1);
+    position: absolute;
+    background-color: $grey;
+    content: "";
+    left: to-rem(20);
+    right: to-rem(20);
+    top: 0;
+    @include mq(tab){
+      left: to-rem(5);
+      right: to-rem(5);
+    }
+  }
+
+}

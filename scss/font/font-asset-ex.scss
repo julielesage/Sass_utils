@@ -1,0 +1,28 @@
+/* ------------------------------------------------------------------
+  Act beautiful type
+  ---
+  § Variables
+  § Font-face declarations
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Variables
+------------------------------------------------------------------ */
+
+$path-to-act-beautiful-font: 'act-beautiful/';
+$act-beautiful-font-name: 'ActBeautiful01-Regular';
+
+
+/* ------------------------------------------------------------------
+  § Font-face declarations
+------------------------------------------------------------------ */
+
+@font-face {
+  font-family: 'act_beautiful_01regular';
+  src:
+    url('#{$paths-to-types}#{$path-to-act-beautiful-font}#{$act-beautiful-font-name}.woff') format('woff'),
+    url('#{$paths-to-types}#{$path-to-act-beautiful-font}#{$act-beautiful-font-name}.woff2') format('woff2');
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-display: swap;
+}

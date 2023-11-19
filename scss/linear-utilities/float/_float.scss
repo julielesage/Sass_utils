@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------------
+  Float and clearfix
+------------------------------------------------------------------ */
+
+.clearfix:before,
+.clearfix:after
+{
+  content : $string_empty;
+  display : table;
+}
+
+.clearfix:after
+{
+  clear : both;
+}
+
+.float_right
+{
+  float : right;
+}
+
+.float_left
+{
+  float : left;
+}

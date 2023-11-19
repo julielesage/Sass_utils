@@ -1,0 +1,35 @@
+/* ------------------------------------------------------------------
+  § Colors
+  ---
+  §§ hexadecimal to rgb
+  §§ rgb to hexadecimal
+------------------------------------------------------------------ */
+
+@function hex-to-rgb( $hex-to-rgb_color ) {
+
+  // Guards
+  @if not is-of-type( $hex-to-rgb_color, color ) {
+
+      @error "<$hex-to-rgb_color>, with a value of #{$hex-to-rgb_color}, #{$message_is-not-a-color}";
+  }
+
+  // Logic
+
+  $hex-to-rgb_color: red($hex-to-rgb_color), green($hex-to-rgb_color), blue($hex-to-rgb_color);
+
+  @return $hex-to-rgb_color;
+}
+
+@function rgb-to-hex( $rgb-to-hex_color ) {
+
+  // Guards
+  @if not is-of-type( $rgb-to-hex_color, color ) {
+
+      @error "<$hex-to-rgb_color>, with a value of #{$rgb-to-hex_color}, #{$message_is-not-a-color}";
+  }
+
+  // Logic
+  $resultRGB: red($rgb-to-hex_color), green($rgb-to-hex_color), blue($rgb-to-hex_color);
+
+  @return $resultRGB;
+}

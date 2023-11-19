@@ -1,0 +1,80 @@
+﻿/* ------------------------------------------------------------------
+  Text size (font-size)
+  ---
+  § Default mobile sizes
+  § Tablet mobile sizes
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Default mobile sizes
+------------------------------------------------------------------ */
+
+@include generate-class('.text_', font-size, $font-sizes-list, true, true);
+
+/* ------------------------------------------------------------------
+  § Tablet mobile sizes
+------------------------------------------------------------------ */
+
+@include mq(tab)
+{
+  @include generate-class('.tab_text_', font-size, $font-sizes-list, true, true);
+  .tab_text_size_23 {
+    font-size: to-rem(23);
+  }
+
+}
+
+@include mq(dsk)
+{
+  @include generate-class('.dsk_text_', font-size, $font-sizes-list, true, true);
+}
+
+.text_size_80
+{
+  font-size : to-rem(80);
+}
+
+.text_size_12 {
+  font-size: to-rem(12);
+}
+
+.text_size_14 {
+  font-size: to-rem(14);
+}
+
+.text_size_15 {
+  font-size: to-rem(15);
+}
+
+.text_size_17 {
+  font-size: to-rem(17);
+}
+
+.text_size_18 {
+  font-size: to-rem(18);
+}
+
+.text_size_20 {
+  font-size: to-rem(20);
+}
+
+.text_size_21 {
+  font-size: to-rem(21);
+}
+
+.text_size_22 {
+  font-size: to-rem(22);
+}
+
+.text_size_23 {
+  font-size: to-rem(23);
+}
+
+
+.text_size_28 {
+  font-size: to-rem(28);
+}
+
+.text_size_38 {
+  font-size: to-rem(38);
+}

@@ -1,0 +1,57 @@
+.details-summary[open="true"] {
+
+  .accordion_smooth-zoom-opening {
+    transform-origin    : center 0;
+    animation-duration  : 500ms;
+    animation-fill-mode : forwards;
+    transform           : perspective(500px) translateZ(0);
+    will-change         : transform, opacity, box-shadow;
+    animation-name      : pull-zoom-accordion;
+    animation-direction : normal;
+  }
+
+  .accordion_smooth-opening {
+    transform-origin    : center 0;
+    animation-duration  : 800ms;
+    animation-fill-mode : forwards;
+    transform           : perspective(500px) translateZ(0);
+    will-change         : transform, opacity, box-shadow;
+    animation-name      : pull-accordion;
+    animation-direction : normal;
+  }
+}
+
+@keyframes pull-zoom-accordion {
+  0% {
+    transform: perspective(500px) translateY(-350px) translateZ(-20px);
+    opacity: 0.3;
+    max-height: 0;
+    box-shadow: 0 5px 20px rgba(138, 148, 30, 0.1);
+  }
+  90% {
+    transform: perspective(500px) translateY(0) translateZ(-20px);
+    opacity: 0.3;
+    max-height: 1000px;
+    box-shadow: 0 5px 20px rgba(138, 148, 30, 0.1);
+  }
+  100% {
+    transform: perspective(500px) translateY(0) translateZ(0);
+    opacity: 1;
+    max-height: 1000px;
+    box-shadow: 0 5px 20px rgba(138, 148, 30, 0.0);
+  }
+}
+
+@keyframes pull-accordion {
+  0% {
+    transform: perspective(500px) translateY(-50px);
+    max-height: 0;
+    box-shadow: 0 5px 20px rgba(138, 148, 30, 0.1);
+  }
+  100% {
+    transform: perspective(500px) translateY(0);
+    max-height: 1000px;
+    box-shadow: 0 5px 20px rgba(138, 148, 30, 0.0);
+  }
+}
+

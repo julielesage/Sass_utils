@@ -1,0 +1,41 @@
+/* ------------------------------------------------------------------
+  has-border
+------------------------------------------------------------------ */
+
+@mixin has-border(
+  $directions: map-get( $border-directions, all ),
+  $border-color: transparent,
+  $border-width: 1px,
+  $border-style: solid
+) {
+
+  // Guards
+  @if not map_has_key( $border-directions, $directions ) {
+
+    @error "Variable <$border-directions> keys must be found in <$border-directions>.";
+  }
+
+  // Logic
+  @if $directions == map-get( $border-directions, all ) {
+
+    border: $border-width $border-style $border-color;
+  }
+  @else if $directions == map-get( $border-directions, none ) {
+
+    border: 0;
+  }
+  @else if $directions == map-get( $border-directions, y ) {
+
+    border-top: $border-width $border-style $border-color;
+    border-bottom: $border-width $border-style $border-color;
+  }
+  @else if $directions == map-get( $border-directions, x ) {
+
+    border-right: $border-width $border-style $border-color;
+    border-left: $border-width $border-style $border-color;
+  }
+  @else {
+
+    border-#{$directions}: $border-width $border-style $border-color;
+  }
+}

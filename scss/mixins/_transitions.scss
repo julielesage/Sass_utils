@@ -1,0 +1,59 @@
+/* ------------------------------------------------------------------
+  Text-decoration
+  ---
+  § Variables
+  § Mixins
+------------------------------------------------------------------ */
+
+$transition-duration_default : 75ms;
+$transition-delay_default : 0ms;
+
+$transition-directions       : (
+  ease: ease,
+  in-out: ease-in-out,
+  in: ease-in,
+  out: ease-out,
+);
+
+/* ------------------------------------------------------------------
+  § Mixins
+------------------------------------------------------------------ */
+
+@mixin transition(
+  $properties: color background-color,
+  $direction: in,
+  $is-mirrored: true,
+  $timing: $transition-duration_default,
+  $delay: $transition-delay_default
+)
+{
+
+  $final-property-value : null;
+
+  @each $property in $properties
+  {
+
+    $discrete-property-value : #{$property} map-get($transition-directions, $direction) $timing $delay;
+    $final-property-value    : append($final-property-value, $discrete-property-value, comma);
+  }
+
+  transition            : #{$final-property-value};
+
+  @if $is-mirrored
+  {
+
+    $final-property-value-mirrored : null;
+
+    @each $property in $properties
+    {
+
+      $discrete-property-value       : #{$property} if($direction == in, map-get($transition-directions, out), map-get($transition-directions, in)) $timing $delay;
+      $final-property-value-mirrored : append($final-property-value-mirrored, $discrete-property-value, comma);
+    }
+
+    @include hover-focus
+    {
+      transition : #{$final-property-value-mirrored};
+    }
+  }
+}

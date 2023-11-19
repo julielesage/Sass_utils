@@ -1,0 +1,61 @@
+/* ------------------------------------------------------------------
+  Box-shadow
+------------------------------------------------------------------ */
+
+.box-shadow_default
+{
+  @include box-shadow();
+}
+
+.box-shadow_falling
+{
+  @include box-shadow_falling;
+}
+
+.box-shadow_soft
+{
+  @include box-shadow_soft;
+}
+
+.box-shadow_top_soft
+{
+  @include box-shadow($offset-y: -6px, $opacity : map_get($opacities-list, default));
+}
+.box-light-shadow
+{
+  @include box-shadow($offset-y: 3px, $opacity : map_get($opacities-list, default));
+
+}
+
+.box-shadow_none
+{
+  @include box-shadow_none;
+}
+
+@include mq(tab, down)
+{
+  .mob_box-shadow_bottom
+  {
+    box-shadow : 0 -10px 15px -5px rgba(0, 0, 0, 0.11);
+  }
+  .mob_box-shadow_soft
+  {
+    @include box-shadow_soft;
+  }
+}
+
+@include mq(tab)
+{
+  .tab_box-shadow_none
+  {
+    @include box-shadow_none;
+  }
+}
+
+@include mq(sml)
+{
+  .sml_box-shadow_none
+  {
+    @include box-shadow_none;
+  }
+}

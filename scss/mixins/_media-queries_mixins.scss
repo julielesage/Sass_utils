@@ -1,0 +1,124 @@
+/* ------------------------------------------------------------------
+  Media-queries
+  -
+  Generate media queries from:
+  - a list of breakpoints
+  - a list of media-query directions (default, see <$media-query-directions-list>)
+  - a list of media types (default, see
+  ---
+  § mq
+------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------
+  § mq
+------------------------------------------------------------------ */
+
+@mixin mq(
+  $breakpoint:    tab,
+  $direction:     default,
+  $media-type:    default,
+  $exclusive:     default
+) {
+
+  // Tests
+  @if (
+    $direction == map-get($media-query-directions-list, between)
+    and
+    length($breakpoint) == 2)
+    or
+    ($direction != map-get($media-query-directions-list, between)
+    and
+    length($breakpoint) == 1)
+  {
+
+    @each $value in $breakpoint {
+
+      @if not map-has-key($breakpoints-list, $value) {
+
+        @error "<$breakpoints> parameter was not set against <$breakpoints-list> map. Choose among key/values of the <$breakpoints-list> map variable or add your new key/value in it. <$breakpoints-list> key/values pairs are: "print-key-values-from-map($breakpoints-list);
+      }
+    }
+  }
+  @else {
+
+    @error 'When <$direction> parameter is set to key "between", the <$breakpoint> parameter must be a list without comma of two dissimilar key breakpoints from the <$breakpoints-list>';
+  }
+
+  @if not $direction == map-get($media-query-directions-list, between) {
+
+    @if not map-has-key($breakpoints-list, $value) {
+
+      @error "<$breakpoints> parameter was not set against <$breakpoints-list> map. Choose among key/values of the <$breakpoints-list> map variable or add your new key/value in it. <$breakpoints-list> key/values pairs are: "print-key-values-from-map($breakpoints-list);
+    }
+  }
+
+  @if not map-has-key($media-query-directions-list, $direction) {
+
+    @error '<$direction> parameter was not set against <$media-query-directions-list> map: Choose among key/values of the <$media-query-directions-list> map variable or add your new key/value in it.';
+  }
+
+  @if not map-has-key($media-query-media-natures-list, $media-type) {
+
+    @error '<$media-type> key '#{$media-type} ' was not found in the <$media-query-media-natures-list> map: Choose among key/values of the <$media-query-media-natures-list> map variable or add your new key/value in it.';
+  } @else {
+
+    // Logic
+    @if $direction == map-get($media-query-directions-list, default) {
+
+      @media
+      #{map-get($media-query-media-natures-list, default)}
+      and
+      (min-width: to-rem(map-get($breakpoints-list, $breakpoint)))
+      {
+        @content;
+      }
+    }
+
+    @if $direction == map-get($media-query-directions-list, down) {
+
+      @media
+      #{map-get($media-query-media-natures-list, default)}
+      and
+      (max-width: to-rem(map-get($breakpoints-list, $breakpoint) - 1))
+      {
+        @content;
+      }
+    }
+
+    @if $direction == map-get($media-query-directions-list, down-inclusive) {
+
+      @media
+      #{map-get($media-query-media-natures-list, default)}
+      and
+      (max-width: to-rem(map-get($breakpoints-list, $breakpoint)))
+      {
+        @content;
+      }
+    }
+
+
+    @if $direction == map-get($media-query-directions-list, between) {
+
+      $final-breakpoint-order: null;
+
+      @if map-get($breakpoints-list, nth($breakpoint, 1)) > map-get($breakpoints-list, nth($breakpoint, 2)) {
+
+        $final-breakpoint-order: map-get($breakpoints-list, nth($breakpoint, 2)) map-get($breakpoints-list, nth($breakpoint, 1));
+      } @else {
+
+        $final-breakpoint-order: map-get($breakpoints-list, nth($breakpoint, 1)) map-get($breakpoints-list, nth($breakpoint, 2));
+      }
+
+      @media
+      #{map-get($media-query-media-natures-list, default)}
+      and
+      (min-width: to-rem(nth($final-breakpoint-order, 1)))
+      and
+      (max-width: to-rem(nth($final-breakpoint-order, 2)))
+      {
+        @content;
+      }
+    }
+  }
+}

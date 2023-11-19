@@ -1,0 +1,55 @@
+/* ------------------------------------------------------------------
+  Z-index
+  ---
+  These classes have to use the <z-index> function
+  They enforce values from <$z-index-list>
+------------------------------------------------------------------ */
+
+.z-index_1 {
+  z-index: z-indexing( 1 );
+}
+
+.z-index_2 {
+  z-index: z-indexing( 2 );
+}
+
+.z-index_3 {
+  z-index: z-indexing( 3 );
+}
+
+// !!! IMPORTANT: don't use the below classes except for very specific components
+// In case of doubt: ask
+
+// .z-index_4 and .z-index_5 are for modal overlays (popins mostly)
+.z-index_4 {
+  z-index: z-indexing( 5 );
+}
+
+// .z-index_4 and .z-index_5 are for modal overlays (popins mostly)
+.z-index_5 {
+  z-index: z-indexing( 5 );
+}
+
+// .z-index_6 is for components that must be above popins
+.z-index_6 {
+  z-index: z-indexing( 6 );
+}
+
+// .z-index_7 is for privacy manager !!!IMPORTANT, privacy manager must be the highest component
+.z-index_7 {
+  z-index: z-indexing( 7 );
+}
+
+// .z-index_10 is for privacy manager !!!IMPORTANT, privacy manager must be the highest component
+.z-index_10 {
+  z-index: z-indexing( 10 );
+}
+
+.z-index_11 {
+  z-index: z-indexing( 11 );
+}
+
+// to be above backlayer when displaying sticky main nav when scrolling up
+.z-index_21 {
+  z-index: z-indexing( 21 );
+}

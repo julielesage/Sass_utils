@@ -1,0 +1,31 @@
+/* ------------------------------------------------------------------
+  Plus-sign
+------------------------------------------------------------------ */
+
+@mixin plus-sign()
+{
+
+  &:before,
+  &:after
+  {
+    content          : $string_empty;
+    position         : absolute;
+    width            : $details-summary_sign-width;
+    height           : 2px;
+    background-color : $brown;
+    @include transition(opacity, $direction : out, $is-mirrored : false);
+  }
+
+  &:before
+  {
+    right     : spacing(default);
+    transform : translateY(-50%);
+  }
+
+  &:after
+  {
+    right      : to-rem(9);
+    margin-top : to-rem(-8);
+    transform  : rotate(-90deg) translate(-50%, -50%);
+  }
+}

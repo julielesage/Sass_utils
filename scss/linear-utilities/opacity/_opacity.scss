@@ -1,0 +1,20 @@
+/* ------------------------------------------------------------------
+  Opacity
+  ---
+  §§ Classes
+------------------------------------------------------------------ */
+
+.opacity_0
+{
+  opacity : map_get($opacities-list, 0);
+}
+
+.opacity_S
+{
+  opacity : map_get($opacities-list, 07);
+}
+
+.opacity_default
+{
+  opacity : map_get($opacities-list, 1);
+}

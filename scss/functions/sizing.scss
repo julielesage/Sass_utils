@@ -1,0 +1,20 @@
+/* ------------------------------------------------------------------
+  § Sizing
+  ---
+  Used for setting widths and heights
+  See <$sizings-list> for the authorized list of values
+  Checks if value is among map <$sizings-list> and output a rem value
+------------------------------------------------------------------ */
+
+@function sizing( $sizing ) {
+
+  // Guards
+  @if not map_has_key( $sizings-list, $sizing ) {
+
+      @error "In function <spacing>, variable <$sizing>, with a value of "#{$sizing}", was not found in the map <$sizings-list>.
+    Parameter <$sizing> was either mispelled or is not present in <$sizings-list>
+    ";
+  }
+
+  @return if($sizing != auto, to-rem(map-get($sizings-list, $sizing)), $sizing);
+}

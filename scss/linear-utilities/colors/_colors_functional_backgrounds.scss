@@ -1,0 +1,5 @@
+/* ------------------------------------------------------------------
+  § Colors Functional backgrounds
+------------------------------------------------------------------ */
+
+@include generate-class('.background_', background-color, $colors-list_functional);

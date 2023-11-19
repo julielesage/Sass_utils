@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------------
+  Paddings (see $spacings for an updated list of values)
+  ---
+  § Percent values
+  § Values from $spacings-list
+  § Breakpoints
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Percent values
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Values from $spacings-list
+------------------------------------------------------------------ */
+
+@include generate-classes-spacings ($spacing-directions, map_remove($spacings-list, auto), 'p', 'padding');
+
+/* ------------------------------------------------------------------
+  § Breakpoints
+  ---
+  §§ Tab
+  §§ Tab down (mob)
+  §§ Dsk
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ Tab
+------------------------------------------------------------------ */
+
+@include mq(tab)
+{
+  @include generate-classes-spacings ($spacing-directions, map_remove($spacings-list, auto), 'tab_p', 'padding');
+}
+
+/* ------------------------------------------------------------------
+  §§ Tab down (mob)
+------------------------------------------------------------------ */
+
+@include mq(tab, down)
+{
+  @include generate-classes-spacings ($spacing-directions, map_remove($spacings-list, auto), 'mob_p', 'padding');
+}
+
+/* ------------------------------------------------------------------
+  §§ Dsk
+------------------------------------------------------------------ */
+
+@include mq(dsk)
+{
+  @include generate-classes-spacings ($spacing-directions, map_remove($spacings-list, auto), 'dsk_p', 'padding');
+}

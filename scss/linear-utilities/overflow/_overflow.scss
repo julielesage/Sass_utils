@@ -1,0 +1,100 @@
+/* ------------------------------------------------------------------
+  Overflow
+  ---
+  § Hidden
+  § Visible
+  § Auto
+  § Hidden - mobile only
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Hidden
+------------------------------------------------------------------ */
+
+.overflow_hidden
+{
+  overflow : hidden;
+}
+
+.overflow-x_hidden
+{
+  overflow-x : hidden;
+}
+
+.overflow-y_hidden
+{
+  overflow-y : hidden;
+}
+
+.overflow_scroll
+{
+  overflow : scroll;
+}
+
+.overflow-x_scroll
+{
+  overflow-x : scroll;
+}
+
+.overflow-y_scroll
+{
+  overflow-y : scroll;
+}
+
+/* ------------------------------------------------------------------
+  § Visible
+------------------------------------------------------------------ */
+
+.overflow_visible
+{
+  overflow : visible;
+}
+
+.overflow-x_visible
+{
+  overflow-x : visible;
+}
+
+.overflow-y_visible
+{
+  overflow-y : visible;
+}
+
+/* ------------------------------------------------------------------
+  § Auto
+------------------------------------------------------------------ */
+
+.overflow_auto
+{
+  overflow : auto;
+}
+
+.overflow-x_auto
+{
+  overflow-x : auto;
+}
+
+.overflow-y_auto
+{
+  overflow-y : auto;
+}
+
+/* ------------------------------------------------------------------
+  § Text
+------------------------------------------------------------------ */
+
+.overflow_text {
+  overflow-wrap: break-word;
+}
+
+/* ------------------------------------------------------------------
+  § Hidden - mobile only
+------------------------------------------------------------------ */
+
+.mob_overflow-y_hidden
+{
+  @include mq(tab, down)
+  {
+    overflow-y : hidden;
+  }
+}

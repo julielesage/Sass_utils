@@ -1,0 +1,40 @@
+﻿/* ------------------------------------------------------------------
+  § Text alignement
+------------------------------------------------------------------ */
+
+.text_left
+{
+  text-align : left;
+}
+
+.text_center
+{
+  text-align : center;
+}
+
+.text_right
+{
+  text-align : right;
+}
+
+.text_justify
+{
+  text-align : justify;
+}
+
+@include mq(tab)
+{
+  .tab_text_left
+  {
+    text-align : left;
+  }
+
+  .tab_text_center
+  {
+    text-align : center;
+  }
+  .tab_text_right
+  {
+    text-align : right;
+  }
+}

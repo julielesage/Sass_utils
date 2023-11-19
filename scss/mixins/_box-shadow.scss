@@ -1,0 +1,66 @@
+
+/* ------------------------------------------------------------------
+  Box-shadow
+  ---
+  § Constructor
+  § Variation(s)
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Constructor
+------------------------------------------------------------------ */
+
+$box-shadow_offset_S: 3px;
+$box-shadow_offset_default: 10px;
+$box-shadow_offset_y: 2px;
+
+@mixin box-shadow(
+  $is-inset: false,
+  $offset-x: 0,
+  $offset-y: $box-shadow_offset_y,
+  $blur-radius: $box-shadow_offset_default,
+  $spread-radius: 0,
+  $color: $black,
+  $opacity: map-get($opacities-list, 02)
+)
+{
+
+  @if not map_has_key( $sass-types-list, boolean )
+  {
+
+    @error "<$is-inset>, with value of #{$is-inset}, #{$message_is-not-a-boolean}";
+  }
+
+  @if not map_has_key( $sass-types-list, number )
+  {
+
+    @error "<$offset-x>, with value of #{$offset-x}, #{$message_is-not-a-number}";
+  }
+
+  box-shadow : if($is-inset, inset, null) $offset-x $offset-y $blur-radius $spread-radius rgba($color, $opacity);
+}
+
+/* ------------------------------------------------------------------
+  § Variation(s)
+------------------------------------------------------------------ */
+
+@mixin box-shadow_none()
+{
+  box-shadow : none !important;
+}
+
+@mixin box-shadow_falling()
+{
+  @include box-shadow($offset-y : $box-shadow_offset_default, $opacity : map_get($opacities-list, default));
+}
+
+@mixin box-light-shadow()
+{
+  @include box-shadow($offset-y: 3px, $opacity : map_get($opacities-list, default));
+}
+
+@mixin box-shadow_soft()
+{
+  @include box-shadow($opacity : map_get($opacities-list, default));
+}
+

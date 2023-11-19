@@ -1,0 +1,305 @@
+/* ------------------------------------------------------------------
+  Heights - utilities
+  ---
+  § Heights
+  § Max-block-sizes
+  § Min-block-sizes
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Height
+  ---
+  §§ From $sizings-list
+  §§ Specific values
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ From $sizings-list
+------------------------------------------------------------------ */
+
+@include generate-class('#{$dot}height#{$underscore}', height, $sizings-list, true);
+
+.tab_height_default {
+  @include mq(tab) {
+    height : sizing(default);
+  }
+}
+
+/* ------------------------------------------------------------------
+  §§ Specific values
+------------------------------------------------------------------ */
+
+.height_auto {
+  height : auto;
+}
+
+.height_100p {
+  height : 100%;
+}
+
+.height_25p {
+  height : 25%;
+}
+
+.height_40vh {
+  height : 40vh;
+}
+
+.height_50p {
+  height : 50%;
+}
+
+.height_60vh {
+  height : 60vh;
+}
+
+.height_65p {
+  height : 65%;
+}
+
+.height_50vh {
+  height : 50vh;
+}
+
+.height_min-content {
+  height : min-content;
+}
+
+.height_max-content {
+  height : max-content;
+}
+
+/* ------------------------------------------------------------------
+  § Max-height
+  ---
+  §§ From $sizings-list
+  §§ Specific values
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ From $sizings-list
+------------------------------------------------------------------ */
+
+@include generate-class('#{$dot}max-height#{$underscore}', max-height, $sizings-list, true);
+
+/* ------------------------------------------------------------------
+  §§ Specific values
+------------------------------------------------------------------ */
+
+.max-height_0 {
+  max-height : 0;
+}
+
+.max-height_inherit {
+  max-height : inherit;
+}
+
+.max-height_none {
+  max-height : none;
+}
+
+/* ------------------------------------------------------------------
+  § Min-height
+  ---
+  §§ From $sizings-list
+  §§ Specific values
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ From $sizings-list
+------------------------------------------------------------------ */
+
+@include generate-class('#{$dot}min-height#{$underscore}', min-height, $sizings-list, true);
+
+/* ------------------------------------------------------------------
+  §§ Specific values
+------------------------------------------------------------------ */
+
+.min-height_100p {
+  min-height : 100%;
+}
+
+.min-height_75px {
+  min-height : to-rem(75);
+}
+
+min-height_30 {
+  min-height : to-rem(30);
+}
+
+.min-height_57px {
+  min-height : to-rem(57);
+}
+
+.min-height_180px {
+  min-height : to-rem(180);
+}
+
+.min-height_445px {
+  min-height : to-rem(445);
+}
+
+.min-height_46px {
+  min-height : to-rem(46);
+}
+
+.min-height_100 {
+  min-height : to-rem(100);
+}
+
+.min-height_110 {
+  min-height : to-rem(110);
+}
+
+.min-height_190 {
+  min-height : to-rem(190);
+}
+
+.min-height_product-box-placeholder {
+  min-height : to-rem(334);
+}
+
+.t2s-addtocart .min-height_product-box-placeholder {
+  min-height : to-rem(367);
+}
+
+.t2s-addtocart .min-height_product-box-placeholder-light {
+  height : to-rem(98);
+}
+
+.height_33vh {
+  height : 33vh;
+}
+
+.height_75vh {
+  height : 75vh;
+}
+
+.height_1p {
+  height : to-rem(1);
+}
+
+.height_10 {
+  height : 10px;
+}
+
+.height_15 {
+  height : 15px;
+}
+
+.height_18 {
+  height : 18px;
+}
+
+.height_20 {
+  height : 20px;
+}
+
+.height_24 {
+  height : 24px;
+}
+
+.height_26 {
+  height : 26px;
+}
+
+.height_30 {
+  height : 30px;
+}
+
+.height_35 {
+  height : 35px;
+}
+
+.height_38 {
+  height : 38px;
+}
+
+.height_41 {
+  height : to-rem(41);
+}
+
+.height_70px {
+  height : to-rem(70);
+}
+
+.height_104 {
+  height : to-rem(104);
+}
+
+.height_180px {
+  height : to-rem(180);
+}
+
+.height_697px {
+  height : to-rem(697);
+}
+
+.height_600px {
+  height : to-rem(600);
+}
+
+.height_100vh-40 {
+  height : calc(100vh - 40px);
+}
+
+.min-height_55px {
+  min-height : to-rem(55);
+}
+
+.min-height_58 {
+  min-height : to-rem(58);
+}
+.max-height_162 {
+  max-height : to-rem(162);
+}
+
+.max-height_190 {
+  max-height : to-rem(190);
+}
+
+.max-height_260 {
+  max-height : to-rem(260);
+}
+
+.max-height_340 {
+  max-height : to-rem(340);
+}
+
+.max-height_100vh {
+  max-height : 100vh;
+}
+
+.max-height_100vh-40 {
+  max-height : calc(100vh - 40px);
+}
+
+.max-height_100vh-500 {
+  max-height: calc(100vh - 500px);
+}
+
+.max-height_80vh-282 {
+  max-height : calc(80vh - 282px);
+}
+
+.max-height_320 {
+  max-height : 250px;
+}
+
+@include mq(tab) {
+  .tab_min-height_70px {
+    min-height : to-rem(70);
+  }
+}
+
+.height_40 {
+  height : 40px;
+}
+
+.height_45 {
+  height : 45px;
+}
+
+.height_50 {
+  height : 50px;
+}

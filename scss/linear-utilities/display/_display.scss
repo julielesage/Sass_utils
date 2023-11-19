@@ -1,0 +1,152 @@
+/* ------------------------------------------------------------------
+  § Display
+  ---
+  § All breakpoints
+  § Mobile only
+  § Tablet and desktop
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § All breakpoints
+------------------------------------------------------------------ */
+
+
+
+.grid
+{
+  display : grid;
+}
+
+.inline-grid
+{
+  display : inline-grid;
+}
+
+.flex
+{
+  display : flex;
+}
+
+.inline-flex
+{
+  display : inline-flex;
+}
+
+.block
+{
+  display : block;
+}
+
+.inline-block
+{
+  display : inline-block;
+}
+
+.inline
+{
+  display : inline;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.none
+{
+  display : none;
+}
+
+/* ------------------------------------------------------------------
+  § Mobile only
+------------------------------------------------------------------ */
+
+@include mq(tab, down)
+{
+  .mob_none
+  {
+    display : none!important;
+  }
+
+  .mob_grid
+  {
+    display : grid;
+  }
+
+  .mob_inline-grid
+  {
+    display : inline-grid;
+  }
+
+  .mob_flex
+  {
+    display : flex;
+  }
+
+  .mob_inline-flex
+  {
+    display : inline-flex;
+  }
+
+  .mob_block
+  {
+    display : block;
+  }
+
+  .mob_inline-block
+  {
+    display : inline-block;
+  }
+
+  .mob_inline
+  {
+    display : inline;
+  }
+}
+
+/* ------------------------------------------------------------------
+  § Tablet and desktop
+------------------------------------------------------------------ */
+
+@include mq(tab)
+{
+
+  .tab_none
+  {
+    display : none;
+  }
+
+  .tab_grid
+  {
+    display : grid;
+  }
+
+  .tab_inline-grid
+  {
+    display : inline-grid;
+  }
+
+  .tab_flex
+  {
+    display : flex;
+  }
+
+  .tab_inline-flex
+  {
+    display : inline-flex;
+  }
+
+  .tab_block
+  {
+    display : block;
+  }
+
+  .tab_inline-block
+  {
+    display : inline-block;
+  }
+
+  .tab_inline
+  {
+    display : inline;
+  }
+}

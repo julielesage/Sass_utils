@@ -1,0 +1,19 @@
+/* ------------------------------------------------------------------
+  § spacing
+  ---
+  Checks if value is among map <$spacings-list>,
+  if <$spacing> is 'auto', returns value as is
+  if not, returns value in rem
+------------------------------------------------------------------ */
+
+@function spacing( $spacing, $isNegative:false ) {
+
+  // Guards
+  @if not map_has_key( $spacings-list, $spacing ) {
+      @error "In function <spacing>, variable <$spacing>, with a value of "#{$spacing}", was not found in the map <$spacings-list>.
+    Parameter <$spacing> was either mispelled or is not present in <$spacings-list>
+    ";
+  }
+
+  @return if($spacing != auto, to-rem(map-get($spacings-list, $spacing),$isNegative), $spacing);
+}

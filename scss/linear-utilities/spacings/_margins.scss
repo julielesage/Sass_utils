@@ -1,0 +1,349 @@
+/* ------------------------------------------------------------------
+  Margins (see $spacings for an updated list of values)
+  ---
+  § Percent values
+  § Values from $spacings-list
+  § Breakpoints
+------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------
+  § None
+------------------------------------------------------------------ */
+
+.margin-none
+{
+  margin : none;
+}
+
+.m-t_0
+{
+  margin-top : 0;
+}
+/* ------------------------------------------------------------------
+  § Percent values
+------------------------------------------------------------------ */
+
+.m-r_50p
+{
+  margin-right : 50%;
+}
+
+.m-l_20p
+{
+  margin-left : 20%;
+}
+
+.m-l_25p
+{
+  margin-left : 25%;
+}
+
+.m-l_50p
+{
+  margin-left : 50%;
+}
+
+.m-l_66p
+{
+  margin-left : 66.66666%;
+}
+.m-l_106
+{
+  margin-left : to-rem(106);
+}
+.m-l_68
+{
+  margin-left : to-rem(68);
+}
+
+.m-l_60
+{
+  margin-left : to-rem(60);
+}
+
+.m-neg_M {
+  margin: -.75rem;
+}
+
+.m-r_10 {
+  margin-right: to-rem(10);
+}
+.m-r_28 {
+  margin-right: to-rem(28);
+}
+
+.m-r_115 {
+  margin-right: to-rem(115);
+}
+
+.m-b_2 {
+  margin-bottom: to-rem(2);
+}
+
+.m-b_4 {
+  margin-top: to-rem(4);
+}
+
+.m-b_30 {
+  margin-bottom: to-rem(30);
+}
+
+.m-b_35 {
+  margin-bottom: to-rem(35);
+}
+.m-b_45 {
+  margin-bottom: to-rem(45);
+}
+.m-b_80 {
+  margin-bottom: to-rem(80);
+}
+
+.m-b_70 {
+  margin-bottom: to-rem(70);
+}
+
+.m-b-neg_1 {
+  margin-bottom : - to-rem(1);
+}
+
+.m-b-neg_5 {
+  margin-bottom : - to-rem(5);
+}
+
+.m-r-neg_8{
+  margin-left   : - to-rem(8);
+}
+.m-t_auto {
+  margin-top: auto;
+}
+
+.m-t_9 {
+  margin-top: to-rem(9);
+}
+
+.m-t_10 {
+  margin-top: to-rem(10);
+}
+.m-t_40 {
+  margin-top: to-rem(40);
+}
+.m-t_36 {
+  margin-top: to-rem(36);
+}
+
+.m-t_70 {
+  margin-top: to-rem(70);
+}
+
+.m-t_3
+{
+  margin-top: to-rem(3);
+}
+
+.m-t-neg_1{
+  margin-top: - to-rem(1);
+}
+
+.m-t-neg_2 {
+  margin-top: - to-rem(2);
+}
+
+.m-t-neg_5 {
+  margin-top: - to-rem(5);
+}
+
+.m-t-minus_16 {
+  margin-top: - to-rem(16);
+}
+
+.m-t-neg_18 {
+  margin-top: - to-rem(18);
+}
+
+.m-t-neg_20 {
+  margin-top: - to-rem(20);
+}
+
+.m-t-neg_52 {
+  margin-top: - to-rem(52);
+}
+
+.m-t-neg_78 {
+  margin-top: - to-rem(78);
+}
+
+.m-t-neg_140 {
+  margin-top: - to-rem(140);
+}
+
+@include mq(tab)
+{
+  .tab_m-l_50p
+  {
+    margin-left : 50%;
+  }
+  .tab_m-l_66p
+  {
+    margin-left : 66.66666%;
+  }
+
+  .tab_m-b_35 {
+    margin-bottom: to-rem(35);
+  }
+}
+
+.m-x_minus-grid_spacing
+{
+  margin-right : to-rem(-$grid_spacing_implementation);
+  margin-left  : to-rem(-$grid_spacing_implementation);
+}
+
+.m-x_minus-S
+{
+  margin-right : - spacing(S);
+  margin-left  : - spacing(S);
+}
+
+.m-x_minus-default
+{
+  margin-right : - spacing(default);
+  margin-left  : - spacing(default);
+}
+
+.m-x_minus-M
+{
+  margin-right : - spacing(M);
+  margin-left  : - spacing(M);
+}
+
+.m-x_minus-L
+{
+  margin-right : - spacing(L);
+  margin-left  : - spacing(L);
+}
+
+.m-_minus-L
+{
+  margin : - spacing(L);
+}
+
+
+.m-b_minus-XL
+{
+  margin-bottom : - spacing(XL)
+}
+
+
+
+.tab_m-x_minus-S
+{
+  @include mq(tab)
+  {
+    margin-right : - spacing(S);
+    margin-left  : - spacing(S);
+  }
+}
+
+.tab_m-x_minus-M
+{
+  @include mq(tab)
+  {
+    margin-right : - spacing(M);
+    margin-left  : - spacing(M);
+  }
+}
+
+.tab_m-x_minus-L
+{
+  @include mq(tab)
+  {
+    margin-right : - spacing(L);
+    margin-left  : - spacing(L);
+  }
+}
+
+.tab_m-b_minus-L
+{
+  @include mq(tab)
+  {
+    margin-bottom : - spacing(L);
+  }
+}
+
+.tab_m-t_minus-L
+{
+  @include mq(tab)
+  {
+    margin-top : - spacing(L);
+  }
+}
+
+.m-l_minus_XL {
+  margin-left : - spacing(XL);
+}
+
+/* ------------------------------------------------------------------
+  § Values from $spacings-list
+------------------------------------------------------------------ */
+
+@include generate-classes-spacings($spacing-directions, $spacings-list, 'm', 'margin');
+
+/* ------------------------------------------------------------------
+  § Breakpoints
+  ---
+  §§ Tab down (mob)
+  §§ Sml
+  §§ Tab
+  §§ Dsk
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ Tab down (mob)
+------------------------------------------------------------------ */
+
+.mob_m-b_XL
+{
+  @include mq(tab, down)
+  {
+    margin-bottom : spacing(XL);
+  }
+}
+.mob_m-x_M
+{
+  @include mq(tab, down)
+  {
+    margin-right : spacing(M);
+    margin-left: spacing(M); ;
+  }
+}
+
+/* ------------------------------------------------------------------
+  §§ Sml
+------------------------------------------------------------------ */
+
+.sml_m-t_0
+{
+  @include mq(sml)
+  {
+    margin-top : spacing(0);
+  }
+}
+
+/* ------------------------------------------------------------------
+  §§ Tab
+------------------------------------------------------------------ */
+
+@include mq(tab)
+{
+  @include generate-classes-spacings($spacing-directions, $spacings-list, 'tab_m', 'margin');
+}
+
+/* ------------------------------------------------------------------
+  § To avoid unexpected margins on childs when utext receive <p> by admin
+------------------------------------------------------------------ */
+
+.utext_m_0 > p
+{
+  margin : 0;
+}

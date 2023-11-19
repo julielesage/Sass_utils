@@ -1,0 +1,121 @@
+﻿/* ------------------------------------------------------------------
+  Text-decoration
+  ---
+  § Mixins
+  § Classes
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Mixins
+------------------------------------------------------------------ */
+
+$text-decoration-styles : (
+  dashed: dashed,
+  dotted: 1px solid $grey,
+  line-through: line-through,
+  solid: solid,
+  underline: underline,
+  none: none,
+);
+
+@mixin text_decoration( $style )
+{
+
+  // Guard
+  @if not map_has_key( $text-decoration-styles, $style )
+  {
+
+    @error "
+    #{to-upper-case('Key not found in source map variable')}
+      ---
+      Mixin <text-decoration> consumes map variables <$text-decoration-styles> with value
+      '#{$style}'
+      as a source.
+      ---
+      Solution(s):
+      1- Verify the value passed in mixin call is present in <$text-decoration-styles>
+      2- Add this value in the list if pertinent.
+    ";
+  }
+
+  // Logic
+  text-decoration : #{$style};
+}
+
+/* ------------------------------------------------------------------
+  § Classes
+------------------------------------------------------------------ */
+
+.text_dotted
+{
+  @include text_decoration(dotted);
+}
+
+.text_line-through
+{
+  @include text_decoration(line-through);
+}
+
+.text_line-through-oblique {
+  position: relative;
+}
+
+.text_line-through-oblique::before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.text_line-through-oblique::before {
+  border-bottom: 1px solid black;
+  -webkit-transform: skewY(10deg);
+  transform: skewY(10deg);
+}
+
+.text_underline
+{
+  @include text_decoration(underline);
+}
+
+.text_underline_offset
+{
+  @include text_decoration(underline);
+  @include mq(tab)
+  {
+    text-underline-offset: to-rem(4);
+  }
+  @include mq(mob)
+  {
+    text-underline-offset: to-rem(3);
+  }
+}
+
+.text_decoration_default,
+.text_decoration_default:hover,
+.hover_text_decoration_default
+{
+  @include text_decoration(none);
+}
+
+.text_decoration_none {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.custom_underline {
+  padding-bottom: 6px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  cursor: pointer;
+}
+
+.text_truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: to-rem(145);
+}

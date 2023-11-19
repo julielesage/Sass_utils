@@ -1,0 +1,90 @@
+/* ------------------------------------------------------------------
+  Generate classes
+  ---
+  § Parameters
+  § Guards
+  § Logic
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Parameters
+------------------------------------------------------------------ */
+
+@mixin generate-class(
+  $class-name, 		                            // String     Prefix to build class' name
+  $property,		                              // String     CSS property to set a value for
+  $values-list,		                            // Map        List of values to set value
+  $to-rem: false,                             // Bool       If rem units are to be output, set this condition to true
+  $declare-property-for-default-value: false  // Bool       Declares property if value is the default one AND the class name needs enrichement to be understood
+)
+{
+
+  /* ------------------------------------------------------------------
+    § Guards
+  ------------------------------------------------------------------ */
+
+  // Test <$property>
+  @if (type-of($property) != string)
+  {
+    @error '"#{$property}" #{$message_is-not-a-string}';
+  }
+
+  @if (str-length($property) == 0)
+  {
+    @error '"#{$property}" #{$message_is-an-empty-string}';
+  }
+
+  // Test <$class-name>
+  @if (type-of($class-name) != string)
+  {
+    @error '"#{$class-name}" #{$message_is-not-a-string}';
+  }
+
+  @if (str-length($class-name) == 0)
+  {
+    @error '"#{$class-name}" #{$message_is-an-empty-string}';
+  }
+
+  @if (str-index($class-name, $dot) != 1)
+  {
+    @error 'Class "#{$class-name}" #{$message_is-not-valid_lack-starting-dot} "#{$dot}#{$class-name}"';
+  }
+
+  // Test <$to-rem>
+  @if type-of($to-rem) != map-get( $sass-types-list, boolean )
+  {
+    @error '<$to-rem>, with a value of "#{$to-rem}" #{$message_is-not-a-boolean}';
+  }
+
+  /* ------------------------------------------------------------------
+    § Logic
+  ------------------------------------------------------------------ */
+
+  $result-class-name : null;
+
+  @each $value-name, $value in $values-list
+  {
+
+    @if ($value-name == $base-name)
+    {
+
+      @if ($declare-property-for-default-value == true)
+      {
+        $result-class-name : str_insert($class-name, str_slice( $property, str-index( $property, $dash ) + 1, str-length( $property ) ) + '_default', str-length( $class-name ) + 1);
+      } @else
+      {
+        $result-class-name : str_insert($class-name, 'default', str-length($class-name) + 1);
+      }
+    } @else
+    {
+      $result-class-name : $class-name + $value-name;
+    }
+
+    $result-value : if($to-rem, if($value != 0, to-rem($value), 0), $value);
+
+    #{$result-class-name}
+    {
+      #{$property}: $result-value;
+    }
+  }
+}

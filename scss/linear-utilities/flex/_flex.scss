@@ -1,0 +1,402 @@
+/* ------------------------------------------------------------------
+  Flex properties
+  ---
+  § All breakpoints
+  § Mobile only
+  § Tablet and desktop
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § All breakpoints
+  ---
+  §§ Flex-direction
+  §§ Justify-content
+  §§ Align-items
+  §§ Flex-basis
+  §§ Flex-grow
+  §§ Flex-shrink
+  §§ Flex-wrap
+
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ Flex-direction
+------------------------------------------------------------------ */
+
+.flex_vertical
+{
+  flex-direction : column;
+}
+
+.flex_horizontal
+{
+  flex-direction : row;
+}
+
+.flex_horizontal-reverse
+{
+  flex-direction : row-reverse;
+}
+
+.flex_vertical-reverse
+{
+  flex-direction : column-reverse;
+}
+
+@include mq(tab) {
+  .tab_flex_vertical
+  {
+    flex-direction : column;
+  }
+
+  .tab_flex_horizontal
+  {
+    flex-direction : row;
+  }
+}
+
+/* ------------------------------------------------------------------
+  §§ Justify-content
+------------------------------------------------------------------ */
+
+.flex-x_normal
+{
+  justify-content : normal;
+}
+
+.flex-x_start
+{
+  justify-content : flex-start;
+}
+
+.flex-x_center
+{
+  justify-content : center;
+}
+
+.flex-x_end
+{
+  justify-content : flex-end;
+}
+
+.flex-x_space-around
+{
+  justify-content : space-around;
+}
+
+.flex-x_space-between
+{
+  justify-content : space-between;
+}
+
+.flex-x_space-evenly
+{
+  justify-content : space-evenly;
+}
+
+@include mq(tab) {
+  .tab_flex-x_center
+  {
+    justify-content : center;
+  }
+}
+
+/* ------------------------------------------------------------------
+  §§ Align-items
+------------------------------------------------------------------ */
+
+.flex-y_baseline
+{
+  align-items : baseline;
+}
+
+.flex-y_end
+{
+  align-items : flex-end;
+}
+
+.flex-y_center
+{
+  align-items : center;
+}
+
+.flex-y_start
+{
+  align-items : flex-start;
+}
+
+.flex-y_stretch
+{
+  align-items : stretch;
+}
+
+/* ------------------------------------------------------------------
+  §§ Align-self
+------------------------------------------------------------------ */
+
+.flex_align-self_baseline
+{
+  align-self : baseline;
+}
+
+.flex_align-self_start
+{
+  align-self : flex-start;
+}
+
+.flex_align-self_center
+{
+  align-self : center;
+}
+
+.flex_align-self_flex-end
+{
+  align-self : flex-end;
+}
+
+.flex_align-self_stretch
+{
+  align-self : stretch;
+}
+
+/* ------------------------------------------------------------------
+  §§ Flex-basis
+------------------------------------------------------------------ */
+
+.flex_0_0_auto {
+  flex : 0 0 auto;
+}
+
+.flex_0_1_auto
+{
+  flex : 0 1 auto;
+}
+
+.flex_1_0_auto
+{
+  flex : 1 0 auto;
+}
+
+.flex_1_0
+{
+  flex : 1 0;
+}
+
+.flex_1_1_0p
+{
+  flex : 1 1 0%;
+}
+
+.flex_1_1_100p
+{
+  flex : 1 1 100%;
+}
+
+.flex_basis_30
+{
+  flex-basis : 30px;
+}
+
+.flex_basis_33p
+{
+  flex-basis : 33.33333%;
+}
+
+.flex_basis_75
+{
+  flex-basis : 75px;
+}
+
+.flex-basis_440
+{
+  flex-basis: to-rem(440);
+}
+
+.flex_basis_49p
+{
+  flex-basis : 49%;
+}
+
+.flex_basis_50p
+{
+  flex-basis : 50%;
+}
+
+.flex_basis_66p
+{
+  flex-basis : 66.66666%;
+}
+
+.flex_basis_100p
+{
+  flex-basis : 100%;
+}
+
+.flex_basis_min-content {
+  flex-basis: min-content
+}
+/* ------------------------------------------------------------------
+  §§ Flex-grow
+------------------------------------------------------------------ */
+
+.flex_grow_0
+{
+  flex-grow : 0;
+}
+
+.flex_grow_1
+{
+  flex-grow : 1;
+}
+
+@include mq(tab, down)
+{
+  .tab_flex_grow_55
+  {
+    flex-grow : 0.55;
+  }
+} 
+
+/* ------------------------------------------------------------------
+  §§ Flex-shrink
+------------------------------------------------------------------ */
+
+.flex_shrink_0
+{
+  flex-shrink : 0;
+}
+
+.flex_shrink_1
+{
+  flex-shrink : 1;
+}
+
+/* ------------------------------------------------------------------
+  §§ Flex-wrap
+------------------------------------------------------------------ */
+
+.flex_wrap
+{
+  flex-wrap : wrap;
+}
+
+.flex_nowrap
+{
+  flex-wrap : nowrap;
+}
+
+@include mq(sml)
+{
+  .sml_flex_nowrap
+  {
+    flex-wrap : nowrap;
+  }
+}
+
+
+
+
+/* ------------------------------------------------------------------
+  § Mobile only
+  ---
+  §§ Flex-direction
+  §§ Justify-content
+  §§ Align-items
+  §§ Flex-wrap
+  §§ Flex-basis
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Mobile only
+  ---
+  §§ Flex-direction
+------------------------------------------------------------------ */
+
+@include mq(tab, down)
+{
+
+  .mob_flex_vertical
+  {
+    flex-direction : column;
+  }
+
+  .mob_flex_horizontal
+  {
+    flex-direction : row;
+  }
+  .mob_flex_wrap
+  {
+    flex-wrap : wrap;
+  }
+
+}
+
+@include mq(tab)
+{
+
+  .tab_flex_vertical
+  {
+    flex-direction : column;
+  }
+
+  .tab_flex_horizontal
+  {
+    flex-direction : row;
+  }
+  .tab_flex_basis_49p
+  {
+    flex-basis: 49%;
+  }
+}
+
+@include mq(sml)
+{
+
+  .sml_flex_basis_49p
+  {
+    flex-basis: 49%;
+  }
+}
+
+/* ------------------------------------------------------------------
+  § Tablet and desktop
+  ---
+  §§ Justify-content
+------------------------------------------------------------------ */
+
+@include mq(tab)
+{
+  .tab_flex-x_start
+  {
+    justify-content : flex-start;
+  }
+
+  .tab_flex-x_center
+  {
+    justify-content : center;
+  }
+
+  .tab_flex-x_end
+  {
+    justify-content : flex-end;
+  }
+
+  .tab_flex-x_space-around
+  {
+    justify-content : space-around;
+  }
+
+  .tab_flex-x_space-between
+  {
+    justify-content : space-between;
+  }
+
+  .tab_flex-x_space-evenly
+  {
+    justify-content : space-evenly;
+  }
+}
+
+.flex_1_1_auto {
+  flex: 1 1 auto;
+}

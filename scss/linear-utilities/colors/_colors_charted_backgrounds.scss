@@ -1,0 +1,19 @@
+/* ------------------------------------------------------------------
+  § Colors charted backgrounds
+------------------------------------------------------------------ */
+
+@include generate-class('.background_', background-color, $colors-list_charted);
+
+.background_white_op30
+{
+  $white_greyish   : #fcf9f3;
+  background-color : transparentize($white_greyish, map_get($opacities-list, 07));
+}
+
+@include mq(tab)
+{
+  .tab_background_white_op125
+  {
+    background-color : transparentize($white, map_get($opacities-list, default));
+  }
+}

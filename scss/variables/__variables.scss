@@ -1,0 +1,530 @@
+
+/* ------------------------------------------------------------------
+  SASS Variables
+  ---
+  § Colors
+  § Keywords
+  § CSS Grid module
+  § Paths to assets
+  § Media-queries
+  § Opacity
+  § Spacings
+  § Text
+  § Decorations
+  § Wording
+  § z-index
+  § 3rd party plugins variables
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Colors
+  ---
+  §§ Base colors
+  §§ Functional colors
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ Base colors
+  ---
+  §§§ Single non functionnal colors
+  §§§ Non functional charted colors list
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§§ Single non functionnal colors
+------------------------------------------------------------------ */
+
+// Non charted variants
+$currentColor                                : currentColor;
+$transparent                                 : transparent;
+$rgba_black_0                                : rgba(0, 0, 0, 0);
+$rgba_black_4                                : rgba(0, 0, 0, .4);
+$rgba_white_0                                : rgba(255, 255, 255, 0);
+$white                                       : #fff;
+$lighter_orange                              : #fffbf8;
+$light_orange                              : #fff9f5;
+
+// Green variants
+$green                                       : #6f7e0d;
+$olive                                       : #62700a;
+$light_green                                 : #e8ecbc;
+$lighter_green                               : #f3f4e8;
+$light_yellow-green                          : #f3f0e1;
+$olivine                                     : #8a941e;
+$lime                                        : #c1d400;
+
+// Pink variants
+$raspberry                                   : #ba1051;
+$light_raspberry                             : #bd3b55;
+$lighter_raspberry                           : #f2e3e6;
+$pale_orange                                 : #fff9f5;
+
+
+  // Grey variants
+$grey_inactive                               : #e0e0e0;
+$grey_text_inactive                          : #999;
+$grey_light_text_inactive                    : #a9a9a9;
+$lighter_grey                                : #e0e0e0;
+$light_grey                                  : #d3d3d3;
+$grey                                        : #e6e6e6;
+$dark_grey                                   : #878787;
+$dark_grey_mid                               : #979797;
+$darker_grey                                 : #2d2d2d;
+$mid_grey                                    : #4d4d4d;
+$cool_grey                                   : #828282;
+$smoke_grey                                  : #f4f4f4;
+$super_light_grey                            : #757575;
+
+// Brown variants
+$egg                                         : #fef7f1;
+$beige                                       : #e1d5c4;
+$taupe                                       : #bc967c;
+$brown                                       : #60472e;
+$black                                       : #000000;
+$egg_white                                   : #e6e6e6;
+$egg_white_lighter                           : #f4f4f4;
+$snow_white                                  : #f3f4e9;
+$smoke_white                                 : #f3f3f3;
+
+/* ------------------------------------------------------------------
+  §§§ Non functional charted colors list
+------------------------------------------------------------------ */
+
+$colors-list_charted: (
+
+  // Non charted colors
+  'currentColor': $currentColor,
+  'transparent': $transparent,
+  'rgba_black_0': $rgba_black_0,
+  'rgba_black_4': $rgba_black_4,
+  'rgba_white_0': $rgba_white_0,
+  'white': $white,
+  'lighter_orange' : $lighter_orange,
+  'light_orange' : $light_orange,
+
+  // Green variants
+  'green': $green,
+  'olive': $olive,
+  'light_green':$light_green,
+  'lighter_green':$lighter_green,
+  'light_yellow-green':$light_yellow-green,
+  'olivine':$olivine,
+  'lime':$lime,
+
+  // Pink variants
+  'raspberry': $raspberry,
+  'light_raspberry': $light_raspberry,
+  'lighter_raspberry': $lighter_raspberry,
+  'pale_orange': $pale_orange,
+
+  // Grey variants
+  'grey': $grey,
+  'grey_light_text_inactive': $grey_light_text_inactive,
+  'grey_inactive': $grey_inactive,
+  'lighter_grey': $lighter_grey,
+  'light_grey': $light_grey,
+  'mid_grey': $mid_grey,
+  'dark_grey': $dark_grey,
+  'dark_grey_mid': $dark_grey_mid,
+  'darker_grey': $darker_grey,
+  'cool_grey': $cool_grey,
+  'smoke_grey': $smoke_grey,
+  'super_light_grey': $super_light_grey,
+  // Brown variants
+  'egg': $egg,
+  'beige': $beige,
+  'taupe': $taupe,
+  'brown': $brown,
+  'egg_white': $egg_white,
+  'egg_white_lighter': $egg_white_lighter,
+  'snow_white': $snow_white,
+  'smoke_white': $smoke_white,
+
+  // Black variant
+  'black': $black,
+);
+
+/* ------------------------------------------------------------------
+  §§ Functional colors
+------------------------------------------------------------------ */
+
+$color_ok                                    : $green;
+$color_ko                                    : #bd3b55;
+$color_yellow                                : #f8bd28;
+
+$colors-list_functional                      : (
+  'ok': $color_ok,
+  'ko': $color_ko,
+  'yellow': $color_yellow,
+);
+
+/* ------------------------------------------------------------------
+  §§ Header colors
+------------------------------------------------------------------ */
+$header-background-color : $green;
+$header-link-color : $white;
+$header-product-number-color : $raspberry;
+$header-product-number-background-color : $white;
+$header-search-form-border : $olivine;
+$header-search-form-border-size : 4px;
+/* ------------------------------------------------------------------
+  § Keywords
+  ---
+  §§ Units
+  §§ Characters
+  §§ SASS types
+  §§ Directions
+  §§ Pseudo selectors list
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ Units
+------------------------------------------------------------------ */
+
+$zero                                        : 0;
+$auto                                        : auto;
+
+/* ------------------------------------------------------------------
+  §§ Characters
+------------------------------------------------------------------ */
+
+$base-name                                   : 'default';
+$dash                                        : '-';
+$dash_double                                 : '#{$dash}#{$dash}';
+$dot                                         : '.';
+$hash                                        : '#';
+$string_empty                                : '';
+$underscore                                  : '_';
+$underscore_double                           : '#{$underscore}#{$underscore}';
+
+/* ------------------------------------------------------------------
+  §§ SASS types
+------------------------------------------------------------------ */
+
+$sass-types-list                             : (
+  boolean: bool,
+  color: color,
+  function: function,
+  list: list,
+  map: map,
+  null: null,
+  number: number,
+  string: string,
+);
+
+/* ------------------------------------------------------------------
+  §§ Directions
+------------------------------------------------------------------ */
+
+$directions-list                             : (
+  top: top,
+  right: right,
+  bottom: bottom,
+  left: left,
+);
+
+$directions-enrichies                        : (
+  x: x,
+  y: y,
+);
+
+$directions_all                              : (
+  all: all,
+);
+
+$text-directions-list                        : (
+  left: left,
+  center: center,
+  right: right,
+  justify: justify,
+);
+
+$spacing-directions                          : (
+  a: all,
+  y: y,
+  x: x,
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+);
+
+$border-directions                           : map-merge($directions-enrichies, map-merge($directions-list, $directions_all));
+
+$content-directions-list                     : (
+  after: 'after',
+  before: 'before'
+);
+
+/* ------------------------------------------------------------------
+  §§ Pseudo selectors list
+  ---
+  §§§ Before et after
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§§ Before et after
+------------------------------------------------------------------ */
+
+$before-after-list                           : (
+  before: 'before',
+  after: 'after',
+);
+
+/* ------------------------------------------------------------------
+  § CSS Grid module
+------------------------------------------------------------------ */
+
+$grid_columns-number                         : 24;
+$grid_spacing_default                        : 10; // Unitless value in pixels
+
+/* ------------------------------------------------------------------
+  § Paths to assets (types, icons, illustrations)
+------------------------------------------------------------------ */
+
+$paths-to-types                              : '../fonts/';
+$path-to-icons                               : '../img/icons/';
+$path-to-img                                 : '../img/';
+$path-to-illustrations                       : 'illustrations/';
+$personal-space-icons-folder                 : 'personal-space/';
+
+/* ------------------------------------------------------------------
+  § Widths
+------------------------------------------------------------------ */
+
+$max-content-width                           : 100%; // In case it's a fluid full-width content container
+$max-content-width_openset                   : 1040; // In case it's a fluid full-width content container for the open set
+$max-content-width_login                     : 510; // In case it's a fluid full-width content container for the login page
+$mob_breakpoint                              : 0;
+$xsml_breakpoint                             : 320;
+$sml_breakpoint                              : 480;
+$sml_tab_breakpoint                          : 768;
+$tab_breakpoint                              : 960;
+$dsk_breakpoint                              : 1140;
+$popup_tab_width                             : 780;
+$popup_desk_width                            : 780;
+$popup_mob_width                             : 480;
+$form_desk_max-width                         : 679;
+$popup_mob_width                             : 480;
+$popup_smaller_width                         : 355;
+
+/* ------------------------------------------------------------------
+  § Media-queries
+  ---
+  §§ Breakpoints
+  §§ Media-queries directions (down, between)
+  §§ Media-queries medias (down, between)
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ Breakpoints
+------------------------------------------------------------------ */
+
+$breakpoints-list                            : (
+  mob: $mob_breakpoint,
+  xsml: $xsml_breakpoint,
+  sml: $sml_breakpoint,
+  stab:$sml_tab_breakpoint,
+  tab: $tab_breakpoint,
+  dsk: $dsk_breakpoint,
+);
+
+/* ------------------------------------------------------------------
+  §§ Media-queries directions (down, between)
+------------------------------------------------------------------ */
+
+// If you modify, regenerate values where $media-query-directions-list is used
+$media-query-directions-list                 : (
+  default: 'default',
+  between: 'between',
+  down: 'down',
+  down-inclusive: 'down-inclusive',
+);
+
+/* ------------------------------------------------------------------
+  §§ Media-queries medias (down, between)
+------------------------------------------------------------------ */
+
+// If you modify, regenerate values where $media-query-media-natures-list is used
+$media-query-media-natures-list              : (
+  all: 'screen, print',
+  default: 'screen',
+  print: 'print',
+);
+
+/* ------------------------------------------------------------------
+  §   § Opacity
+------------------------------------------------------------------ */
+
+// If you modify, regenerate values where $opacities-list is used
+$opacities-list                              : (
+  0: 0,
+  default: 0.125,
+  02: 0.2,
+  03: 0.3,
+  05: 0.5,
+  07: 0.7,
+  08: 0.875,
+  1: 1,
+);
+
+/* ------------------------------------------------------------------
+  § Spacings
+------------------------------------------------------------------ */
+
+$spacings_base                               : 10;
+
+// If you modify, regenerate values where $spacings-list is used
+$spacings-list                               : (
+  auto: $auto,
+  0: 0,
+  XXS: 2,
+  XS: ($spacings_base / 2.5), //4
+  S: $spacings_base / 2, //5
+  default: $spacings_base, //10
+  M: ($spacings_base * 1.2), //12
+  XM : ($spacings_base * 1.6), //16
+  XXM: ($spacings_base * 1.8), //18
+  L: ($spacings_base * 2), //20
+  XL: ($spacings_base * 2.5), //25
+  XXL: ($spacings_base * 3),
+  XXXL: ($spacings_base * 4),
+  XXXXL: ($spacings_base * 8),
+);
+
+/* ------------------------------------------------------------------
+  § Heights
+------------------------------------------------------------------ */
+
+// If you modify, regenerate values where $sizings-list is used
+$sizings-list                                : (
+  XXXS: 12,
+  XXS: 16,
+  XS: 24,
+  S: 32,
+  default: 48,
+  M: 64,
+  L: 80,
+  XL: 96,
+  XXL: 100,
+  XXXXL : 151,
+  XXXXXXL : 355,
+  // Tweak points
+  entry-article_bottom-offset: 40,
+  form: 45,
+  30: 30,
+  40: 40,
+  42: 42,
+  50: 50,
+  55: 55,
+  reassurance-picto: 26
+);
+
+/* ------------------------------------------------------------------
+  § Text
+------------------------------------------------------------------ */
+
+$font-size_default                           : 14;
+$line-height_default                         : 1.15;
+
+// If you modify, regenerate values where $font-sizes-list is used
+$font-sizes-list                             : (
+  'XXXXS': 8,
+  'XXXS': 10,
+  'XXS': 11,
+  'XS': 12,
+  'S': 13,
+  default: $font-size_default,
+  'M': 15,
+  'L': 16,
+  'XL': 17,
+  'XXL': 18,
+  'XXXL': 20,
+  'XXXXL': 22,
+  'XXXXXL': 25,
+  'XXXXXXL' : 28,
+  'XXXXXXXL' : 38,
+  'XXXXXXXXL' : 50,
+  'XXXXXXXXXL' : 55
+);
+
+/* ------------------------------------------------------------------
+  § Decorations
+  ---
+  §§ Opacity
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  § Text
+  ---
+  §§ Variables exists
+  §§ Type checking
+  §§ Convention validity
+------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+  §§ Variables exists ?
+------------------------------------------------------------------ */
+
+$message_variable-not-created-or_misdeclared : "is not declared throughout the project. '\a' Resolution: '\a' Verify variable for typos. '\a' Verify variable was declared in the project.";
+
+/* ------------------------------------------------------------------
+  §§ Type checking
+------------------------------------------------------------------ */
+
+$message_is-not-a-boolean                    : "is not a boolean.";
+$message_is-not-a-number                     : "is not a number.";
+$message_is-not-a-string                     : "is not a string.";
+$message_is-not-a-color                      : "is not a color.";
+$message_is-not-a-sass-type                  : ", to our knowledge, is not a legal type in the SASS language. '\a' Resolution: '\a' 1- Check in variable '$sass-types' if your type is present. '\a' 2- Check for typos in the type you passed as an argument.";
+
+$message_is-an-empty-string                  : "string is empty and should not.";
+
+$message_is-not-unitless                     : "is not a unitless value. It should be provided without any unit attached to the value.";
+
+/* ------------------------------------------------------------------
+  §§ Convention validity
+------------------------------------------------------------------ */
+
+$message_is-not-valid_lack-starting-dot      : "parameter doesn't start with an dot, '.', as it should, please add a dot at the start  of the value, like so: ";
+
+/* ------------------------------------------------------------------
+  § z-index
+------------------------------------------------------------------ */
+
+// All z-index values MUST be taken from the <$z-index-list> map variable
+// All z-index values MUST be declared via the <z-index> function like so: 'z-index: z-indexing( 1 );'
+// Classes that utilize values of <$z-index-list> are declared as comments in regard to the value
+$z-index-list                                : (
+  // Yves Rocher code (values and classes)
+  1: 1, // .z-index_1, ;main-nav_list_second-level, .slider_product-detail .slick-prev, .slider_with-thumbnails_for_content-unit, .tabs_header_is-active
+  2: 2, // .z-index_2, mixin has-triangle, .slider_with-thumbnails .slick-arrow
+  3: 3, // .z-index_3
+
+  4: 4, // .z-index_4 .modal-overlay
+  5: 5, // .z-index_5
+
+  6: 6, // .z-index_6 .footer-toaster
+  7: 7, // .z-index_7 .privacy-manager
+  10: 10, // .z-index_10 headers
+  11: 11, // .z-index_11 .modal
+  21: 21, // above backLayer for header sticky main nav
+  // Third-party code (values and classes)
+);
+
+/* ------------------------------------------------------------------
+  § 3rd party plugins variables
+------------------------------------------------------------------ */
+
+// Slick arrow width
+$arrow-width                                 : 32px;
+
+// Pdp img main slide height
+$main-img-slider-max-height-mob              : 295px;
+$main-img-slider-max-height-desk             : 550px;
+
+//variant color popup
+$variant-color-list                          : 282;
+
+// mobile header size
+$mobile-header-height-size                   : 66px;

@@ -1,0 +1,36 @@
+/* ------------------------------------------------------------------
+ Interactive
+------------------------------------------------------------------ */
+
+.cursor_pointer
+{
+  cursor : pointer;
+}
+
+.cursor_default
+{
+  cursor : default;
+}
+
+.button_as-link:hover,
+.button_as-link:focus
+{
+  cursor : pointer;
+}
+
+.prevent_click
+{
+  pointer-events: none;
+}
+
+.allow_click {
+  pointer-events: initial;
+}
+
+.prevent_link_click,
+.prevent_link_click:focus,
+.prevent_link_click:hover,
+{
+  cursor : default;
+  pointer-events: none;
+}

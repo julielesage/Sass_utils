@@ -1,0 +1,160 @@
+/* ------------------------------------------------------------------
+  Border-radius
+------------------------------------------------------------------ */
+
+.border-radius_L
+{
+  background-clip : padding-box;
+  border-radius   : spacing(L);
+}
+
+.border-radius_M
+{
+  background-clip : padding-box;
+  border-radius   : spacing(M);
+}
+
+.border-radius_default
+{
+  background-clip : padding-box;
+  border-radius   : spacing(default);
+}
+
+.border-radius_S
+{
+  background-clip : padding-box;
+  border-radius   : spacing(S);;
+}
+.border-radius_XXS
+{
+  background-clip : padding-box;
+  border-radius   : spacing(XXS);
+}
+
+.border-radius_20
+{
+  background-clip : padding-box;
+  border-radius   : to-rem(20);
+}
+.border-radius_15
+{
+  background-clip : padding-box;
+  border-radius   : to-rem(15.5);
+}
+
+
+.border-radius_M
+{
+  background-clip : padding-box;
+  border-radius   : 5px;
+}
+
+.border-radius_L
+{
+  background-clip : padding-box;
+  border-radius   : 8px;
+}
+
+.border-radius_XXL
+{
+  background-clip : padding-box;
+  border-radius   : 20px;
+}
+
+.border-radius-l_L
+{
+  background-clip : padding-box;
+  border-radius   : 8px 0 0 8px;
+}
+
+.border-radius-r_L
+{
+  background-clip : padding-box;
+  border-radius   : 0 8px 8px 0;
+}
+
+.border-radius-t_L
+{
+  background-clip : padding-box;
+  border-radius   : 8px 8px 0 0;
+}
+
+.round
+{
+  background-clip : padding-box;
+  border-radius   : 50%;
+}
+
+.border-radius_none
+{
+  border-radius : 0;
+}
+@include mq(tab)
+{
+  .tab_border-radius_L
+  {
+    background-clip : padding-box;
+    border-radius   : 8px;
+  }
+}
+
+.border-radius-t_default
+{
+  background-clip : padding-box;
+  border-radius : spacing(default) spacing(default) 0 0;
+}
+.border-radius-t-r_default
+{
+  background-clip : padding-box;
+  border-top-right-radius : spacing(default);
+}
+
+.border-radius-t-l_none
+{
+  border-top-left-radius : 0;
+}
+
+.border-radius-t-r_none
+{
+  border-top-right-radius : 0;
+}
+
+.border-radius-b-r_default
+{
+  background-clip : padding-box;
+  border-bottom-right-radius : spacing(default);
+}
+.border-radius-b-l_default
+{
+  background-clip : padding-box;
+  border-bottom-left-radius : spacing(default);
+}
+
+.border-radius-t-r_S
+{
+  background-clip : padding-box;
+  border-top-right-radius : spacing(S);
+}
+.border-radius-t-l_S
+{
+  background-clip : padding-box;
+  border-top-left-radius : spacing(S);
+}
+.border-radius-b-r_S
+{
+  background-clip : padding-box;
+  border-bottom-right-radius : spacing(S);
+}
+.border-radius-b-l_S
+{
+  background-clip : padding-box;
+  border-bottom-left-radius : spacing(S);
+}
+
+@include mq(sml)
+{
+  .sml_border-radius_none
+  {
+    border-radius: 0;
+  }
+}
